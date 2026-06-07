@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#0a0e14"><title>SHARP</title><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><style>
+:root{--bg:#0a0e14;--c:#121821;--c2:#1a222e;--t:#e8edf2;--t2:#8a97a6;--a:#38bdf8;--a2:#7dd3fc;--ac:#0ea5e9;--al:rgba(56,189,248,.10);--b:#222c39;--ok:#34d399;--w:#fbbf24;--sh:0 4px 20px rgba(0,0,0,.4)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--t);min-height:100vh;-webkit-tap-highlight-color:transparent;padding-bottom:40px;overflow-x:hidden}
+h1,h2,h3,.lb{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px}
+.ct{max-width:520px;margin:0 auto;padding:0 12px}
+.tb{position:sticky;top:0;z-index:100;background:rgba(10,14,20,.92);backdrop-filter:blur(10px);padding:13px 14px;display:flex;align-items:center;gap:10px;color:var(--t);border-bottom:1px solid var(--b)}
+.tb h1{font-size:15px;letter-spacing:4px;color:var(--a);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:700}
+.tb .bk{background:none;border:none;color:var(--t);font-size:24px;cursor:pointer;padding:2px 6px;line-height:1}
+.tb .ph{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:1px;color:var(--t2);background:var(--c2);padding:4px 9px;border-radius:3px;white-space:nowrap}
+.ih{background:linear-gradient(150deg,#0a0e14 0%,#10212e 60%,#0a0e14 100%);padding:44px 20px 38px;text-align:center;margin:0 -12px 22px;position:relative;border-bottom:1px solid var(--b)}
+.ih::after{content:'';position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);width:80px;height:2px;background:linear-gradient(90deg,transparent,var(--a),transparent)}
+.ih h1{font-size:42px;letter-spacing:10px;margin-bottom:6px;font-weight:700;background:linear-gradient(90deg,#7dd3fc,#38bdf8,#0ea5e9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ih .su{font-size:12px;color:var(--t2);letter-spacing:3px;text-transform:uppercase}
+.ih .tg{font-size:11px;color:var(--a);letter-spacing:2px;margin-top:14px;font-family:'Oswald',sans-serif}
+.is{background:var(--c);border:1px solid var(--b);border-left:3px solid var(--a);padding:15px;margin-bottom:11px;border-radius:0 6px 6px 0}
+.is h3{font-size:13px;color:var(--a);margin-bottom:9px;letter-spacing:1.5px}
+.is p,.is li{font-size:13px;line-height:1.65;color:var(--t2)}
+.is ul{padding-left:16px;margin-top:4px}
+.is li{margin-bottom:5px}
+.is b{color:var(--t)}
+.kp{color:var(--a2);font-weight:600}
+.ag{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin:12px 0}
+.ai2{background:var(--al);border:1px solid rgba(56,189,248,.18);padding:9px 6px;text-align:center;font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:.5px;color:var(--a2);border-radius:4px}
+.sb{display:block;width:100%;background:linear-gradient(90deg,var(--ac),var(--a));color:#04121c;border:none;font-family:'Oswald',sans-serif;font-size:16px;letter-spacing:3px;padding:16px;margin-top:12px;cursor:pointer;text-transform:uppercase;border-radius:6px;font-weight:700}
+.sb:active{opacity:.85}
+.sb.alt{background:var(--c2);color:var(--a);border:1px solid var(--b)}
+.wg{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:14px 0}
+.wc{background:var(--c);border:1px solid var(--b);padding:17px 8px;text-align:center;cursor:pointer;border-radius:8px;transition:all .15s}
+.wc:active{transform:scale(.96);border-color:var(--a)}
+.wc .wn{font-family:'Oswald',sans-serif;font-size:26px;color:var(--a);font-weight:700;line-height:1}
+.wc .wl{font-size:9px;color:var(--t2);letter-spacing:1px;text-transform:uppercase;margin-top:6px}
+.wc.pk{border-color:var(--w)}.wc.pk .wn{color:var(--w)}
+.wc.tp{border-color:var(--ok)}.wc.tp .wn{color:var(--ok)}
+.stt{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:2px;color:var(--a);margin:20px 0 10px;padding-bottom:7px;border-bottom:1px solid var(--b)}
+.dg{display:flex;flex-direction:column;gap:9px;padding:10px 0}
+.dc{background:var(--c);border:1px solid var(--b);border-left:4px solid var(--a);padding:15px 16px;display:flex;align-items:center;gap:12px;cursor:pointer;border-radius:0 8px 8px 0;transition:all .15s}
+.dc:active{background:var(--c2)}
+.dc.run{border-left-color:var(--ok)}
+.dc.rest{border-left-color:#4b5563;opacity:.65}
+.dc .dn{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;flex:1;letter-spacing:.5px}
+.dc .dd{font-size:11px;color:var(--t2)}
+.dc .dk{color:var(--ok);font-size:18px}
+.br{background:linear-gradient(135deg,#10212e,#0a0e14);border:1px solid var(--b);padding:15px;margin:0 0 14px;border-radius:8px;border-top:2px solid var(--a)}
+.br h3{font-size:12px;color:var(--a);letter-spacing:2px;margin-bottom:8px}
+.br p{font-size:13px;line-height:1.7;color:var(--t2)}
+.wu{background:var(--c);margin-bottom:11px;border:1px solid var(--b);border-radius:8px;overflow:hidden}
+.wuh{padding:13px 14px;font-family:'Oswald',sans-serif;font-size:13px;color:var(--t2);display:flex;align-items:center;gap:8px;cursor:pointer;letter-spacing:1px}
+.wuh .wut{font-size:10px;background:var(--c2);padding:3px 8px;border-radius:3px;color:var(--t2);margin-left:auto}
+.wub{display:none;padding:0 14px 12px}
+.wub.op{display:block}
+.we{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid var(--b)}
+.we:last-child{border-bottom:none}
+.wei{flex:1}.wen{font-size:13px;font-weight:600;color:var(--t)}
+.wed{font-size:11px;color:var(--t2);margin-top:3px;line-height:1.45}
+.wev{font-family:'Oswald',sans-serif;font-size:11px;color:var(--a);white-space:nowrap;background:var(--al);padding:4px 8px;border-radius:3px;flex-shrink:0}
+.ec{background:var(--c);margin-bottom:9px;border:1px solid var(--b);border-radius:8px;overflow:hidden}
+.eh{padding:13px 14px;display:flex;align-items:center;gap:8px;cursor:pointer;border-left:4px solid var(--a)}
+.eh.explosive{border-left-color:#f472b6}
+.eh.core{border-left-color:#a78bfa}
+.eh.grip{border-left-color:#64748b}
+.eh.cardio{border-left-color:var(--ok)}
+.eh.wod{border-left-color:#fb923c}
+.eh.legs{border-left-color:#facc15}
+.en{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;flex:1;letter-spacing:.5px}
+.et{font-size:8px;background:var(--al);color:var(--a);padding:3px 7px;font-family:'Oswald',sans-serif;letter-spacing:1px;border-radius:3px;white-space:nowrap}
+.et.pl{background:var(--a);color:#04121c}
+.ey{text-decoration:none;font-size:15px;color:var(--a);padding:2px;flex-shrink:0}
+.eb{padding:0 14px 14px;display:none}
+.eb.op{display:block}
+.em{display:flex;gap:6px;flex-wrap:wrap;margin:9px 0}
+.em span{font-size:10px;color:var(--t2);background:var(--c2);padding:3px 7px;border-radius:3px}
+.em .tp2{font-family:'Oswald',sans-serif;color:var(--a);font-weight:600;background:var(--al)}
+.ht{font-size:12px;color:var(--t2);line-height:1.55;background:var(--c2);padding:10px;margin-bottom:10px;border-left:2px solid var(--a);border-radius:0 4px 4px 0}
+.ht strong{color:var(--a2)}
+.cu{font-size:12px;color:var(--t2);line-height:1.5;background:var(--al);padding:8px 10px;margin-bottom:10px;border-left:2px solid var(--a);border-radius:0 4px 4px 0}
+.rx2{background:var(--c2);padding:11px;margin-bottom:10px;border:1px solid var(--b);border-radius:5px}
+.rx2 .lb{font-size:11px;color:var(--a);letter-spacing:1px;margin-bottom:6px;font-family:'Oswald',sans-serif}
+.rx2 .rv{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:var(--t)}
+.rx2 .nt{font-size:11px;color:var(--t2);margin-top:4px;line-height:1.5}
+.sg2{font-size:11px;color:var(--w);padding:7px 10px;background:rgba(251,191,36,.08);border-left:2px solid var(--w);margin-bottom:10px;border-radius:0 4px 4px 0;line-height:1.5}
+.pd{font-size:11px;color:var(--t2);padding:6px 10px;background:rgba(52,211,153,.07);border-left:2px solid var(--ok);margin-bottom:10px;border-radius:0 4px 4px 0}
+.pd strong{color:var(--ok)}
+.sl{margin:8px 0}
+.sl-t{font-family:'Oswald',sans-serif;font-size:11px;letter-spacing:1px;color:var(--t2);margin-bottom:6px}
+.sr{display:flex;align-items:center;gap:5px;margin-bottom:5px;padding:6px 7px;background:var(--bg);border:1px solid var(--b);border-radius:4px}
+.sn2{font-family:'Oswald',sans-serif;font-size:11px;color:var(--a);width:24px;text-align:center;font-weight:700;flex-shrink:0}
+.si{flex:1;display:flex;align-items:center;gap:3px}
+.si input{width:100%;border:none;border-bottom:2px solid var(--b);background:transparent;color:var(--t);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;text-align:center;padding:4px 0;outline:none;-webkit-appearance:none}
+.si input:focus{border-bottom-color:var(--a)}
+.si .u{font-size:9px;color:var(--t2);flex-shrink:0;width:22px}
+.ln{width:100%;border:1px solid var(--b);background:var(--bg);color:var(--t);padding:8px;font-family:'Inter',sans-serif;font-size:12px;resize:vertical;min-height:38px;outline:none;margin-top:6px;border-radius:4px}
+.ln:focus{border-color:var(--a)}
+.cb{display:block;width:100%;background:var(--ok);color:#04121c;border:none;font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:2px;padding:14px;margin-top:16px;cursor:pointer;border-radius:6px;font-weight:600}
+.cb:active{opacity:.85}
+.cb.exp{background:var(--c2);color:var(--a);border:1px solid var(--a)}
+.hd{display:none!important}
+.fi{animation:fi .25s ease}
+@keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.otb{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}
+.otb th{background:var(--c2);color:var(--a);padding:7px 8px;text-align:left;font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:1px;border-bottom:1px solid var(--b)}
+.otb td{padding:7px 8px;border-bottom:1px solid var(--b);color:var(--t2)}
+.otb td b{color:var(--t)}
+.run-tbl{width:100%;border-collapse:collapse;font-size:12px;margin:6px 0}
+.run-tbl td{padding:8px;border-bottom:1px solid var(--b);color:var(--t2)}
+.run-tbl td:first-child{font-family:'Oswald',sans-serif;color:var(--a);width:36px}
+.run-tbl tr.cur td{background:var(--al);color:var(--t)}
+</style></head><body>
+<div class="tb"><button class="bk hd" id="bkB" onclick="goBack()">‹</button><h1 id="tT">SHARP</h1><span class="ph hd" id="phB"></span></div>
+<div class="ct" id="app"></div>
+<script>
+const Y=q=>"https://www.youtube.com/results?search_query="+encodeURIComponent(q+" technique");
+const DN=['','LUNDI','MARDI','MERCREDI','JEUDI','VENDREDI','SAMEDI','DIMANCHE'];
+const PH=['','INSTALLATION','INSTALLATION','DENSIFICATION','DENSIFICATION','PIC','TAPER'];
+const LS='sharp_';
+let S={p:'intro',w:1,d:1,oEx:null,oWu:false};
+function sv(k,v){try{localStorage.setItem(LS+k,JSON.stringify(v))}catch(e){}}
+function ld(k,d){try{let v=localStorage.getItem(LS+k);return v?JSON.parse(v):d}catch(e){return d}}
+function gL(w,d,ei,si,f){return ld(w+'_'+d+'_'+ei+'_'+si+'_'+f,'')}
+function sL(w,d,ei,si,f,v){sv(w+'_'+d+'_'+ei+'_'+si+'_'+f,v)}
+function gN(w,d,ei){return ld('n_'+w+'_'+d+'_'+ei,'')}
+function sN(w,d,ei,v){sv('n_'+w+'_'+d+'_'+ei,v)}
+function gDn(w,d){return ld('dn_'+w+'_'+d,false)}
+function sDn(w,d){sv('dn_'+w+'_'+d,true)}
+function nav(p,ps){ps=ps||{};S=Object.assign({},S,{p:p},ps,{oEx:null,oWu:false});render();window.scrollTo(0,0)}
+function goBack(){S.p==='day'?nav('days',{w:S.w}):S.p==='days'?nav('weeks'):S.p==='weeks'?nav('intro'):S.p==='goals'?nav('intro'):nav('intro')}
+function tEx(id){S.oEx=S.oEx===id?null:id;document.querySelectorAll('.eb').forEach(function(e){e.classList.remove('op')});var el=document.getElementById(id);if(el&&S.oEx===id)el.classList.add('op')}
+function tWu(){S.oWu=!S.oWu;var el=document.getElementById('wuBody');if(el)el.classList.toggle('op',S.oWu)}
+function Wk(a){var r={};a.forEach(function(x){r[x[0]]={rx:x[1],note:x[2]||'',sg:x[3]||''}});return r}
+
+var BF={
+1:'<span class="kp">INSTALLATION.</span> Note TOUTES tes charges (S1=calibration) + hauteur sauts + distance Broad Jump + score WOD. C\'est ta référence pour tout le bloc.',
+2:'<span class="kp">INSTALLATION.</span> Légère montée en charge. Tu installes les patterns, les supersets, le circuit grip. Établis les scores WOD.',
+3:'<span class="kp">DENSIFICATION.</span> Charges montent, WOD plus denses, tempo continu sur le seuil. Le déficit commence à se sentir — gère ta récup.',
+4:'<span class="kp">DENSIFICATION.</span> On pousse le volume course (70min Z2). Charges muscu en progression. Surveille fatigue + peau (grip).',
+5:'<span class="kp">PIC.</span> Semaine la plus dure : WOD au sommet, runs intenses, volume max. Teste tes sauts (maintien explosivité). Donne tout.',
+6:'<span class="kp">TAPER.</span> Allègement -40%. Tu arrives à la plage SEC ET FRAIS. Volume réduit, on garde l\'intensité légère. Profite.'};
+
+var WU={
+PUSH:{nm:'ÉCHAUFFEMENT PUSH',dur:'10 min',ex:[
+{n:'Band Pull-Apart',v:'2×15',d:'Bras tendus, rétraction scapulaire. Réveille le haut du dos avant de pousser.'},
+{n:'Shoulder Dislocates',v:'2×10',d:'Bâton large par-dessus tête, lent. Mobilité épaule.'},
+{n:'Scapular Push-Ups',v:'2×10',d:'Pompe bras tendus, protraction/rétraction omoplates.'},
+{n:'Band Overhead Press',v:'2×12',d:'Élastique sous pieds, presser au-dessus. Active deltoïdes.'},
+{n:'Push-Ups tempo',v:'2×8',d:'3sec descente, omoplates serrées. Prépare pec/triceps.'}]},
+PULL:{nm:'ÉCHAUFFEMENT PULL',dur:'8-10 min',ex:[
+{n:'Band Pull-Apart',v:'2×15',d:'Rétraction scapulaire.'},
+{n:'Shoulder Dislocates',v:'2×10',d:'Lent, amplitude complète.'},
+{n:'Scapular Pull-Ups',v:'2×8',d:'Suspendu bras tendus, dépression scapulaire sans plier les coudes.'},
+{n:'Band Face Pull',v:'2×12',d:'Vers visage, coudes hauts, rotation externe.'},
+{n:'Extension thoracique',v:'8',d:'Sur foam roller, extension haut du dos.'}]},
+FULL:{nm:'ÉCHAUFFEMENT FULL',dur:'10 min',ex:[
+{n:'Band Pull-Apart',v:'2×15',d:'Haut du dos.'},
+{n:'Shoulder Dislocates',v:'2×10',d:'Épaules.'},
+{n:'90/90 Hip Switches',v:'2×8',d:'Assis, pivoter les hanches d\'un côté à l\'autre, dos droit.'},
+{n:'World\'s Greatest Stretch',v:'3/côté',d:'Fente + rotation thoracique. Mobilité globale.'},
+{n:'Goblet Squat Hold',v:'2×20s',d:'Squat profond tenu, coudes poussent genoux.'},
+{n:'Leg Swings',v:'10/sens',d:'Avant-arrière + latéral. Réveille hanches avant les sauts.'}]},
+TEMPO:{nm:'ÉCHAUFF. TEMPO',dur:'15 min',ex:[
+{n:'Jogging progressif',v:'12-15min',d:'Z1 → Z2, finir à allure aisée. Le corps doit être chaud avant le bloc seuil.'},
+{n:'Lignes droites',v:'2-3×20m',d:'Accélérations progressives pour réveiller la foulée.'}]},
+VMA:{nm:'ÉCHAUFF. VMA',dur:'15 min',ex:[
+{n:'Jogging progressif',v:'12min',d:'Très lent → Z2.'},
+{n:'A-Skip / B-Skip',v:'2×20m',d:'Montée genou + griffé. Technique de course.'},
+{n:'Lignes droites',v:'3-4×20m',d:'Accélérations quasi-max. Récup marche. Prépare les jambes au VMA.'}]},
+Z2:{nm:'ÉCHAUFF. Z2',dur:'5 min',ex:[
+{n:'Jogging très lent',v:'5min',d:'Montée progressive jusqu\'en bas de Z2 (FC ~137).'}]}
+};
+
+var DAYS=[
+{day:1,nm:'PUSH — EXPLO + PECS/ÉPAULES/TRICEPS + ABDOS',wu:'PUSH',type:'gym',dur:['~85','~88','~92','~92','~95','~75'],ex:[
+{n:'Explosivité Upper',tag:'explosive',yt:Y('medicine ball slam plyo push up'),tempo:'Maximal',rest:'1m30',sets:0,
+howto:'<strong>EN OUVERTURE, SNC frais.</strong> Maintien de la puissance de poussée (transfert devil press/thrusters).<br><strong>MB Chest Pass:</strong> face mur, pousser explosif, le ballon quitte les mains.<br><strong>MB Slam:</strong> au-dessus tête, triple extension → projeter au sol.<br><strong>Plyo Push-Up:</strong> pompe explosive, mains décollent. Réception disque 20kg pour mesurer la hauteur.<br>▶ <a href="'+Y('medicine ball slam')+'" target="_blank">MB Slam</a> · <a href="'+Y('plyometric push up')+'" target="_blank">Plyo PU</a>',
+cue:'Récup complète entre séries. Qualité > fatigue. Note la hauteur/distance.',
+weeks:Wk([[1,'MB Chest Pass 3×5','NOTER DIST'],[2,'MB Slam 3×5',''],[3,'Plyo PU 3×5','Réception disque'],[4,'Plyo PU 3×5','Mesure hauteur'],[5,'MB Shotput 3×3/c + Plyo PU 3×4','PIC'],[6,'MB Slam 2×5','Léger']]),
+fatigue:{rx:'2×5 léger',note:''}},
+{n:'Développé Incliné Haltères',tag:'pillar',yt:Y('incline dumbbell press'),tempo:'3-1-2-0',rest:'2-3 min',sets:4,
+howto:'Banc incliné 30°. Haltères, amplitude complète, coudes ~45°. Descente 3sec, pause 1sec. Pec HAUT = le plus visible plage.',cue:'S1 = note tes charges. Pic de poitrine en haut du t-shirt.',
+weeks:Wk([[1,'4×6-8','CALIBRER'],[2,'4×6-8 +charge',''],[3,'4×6-8 +charge',''],[4,'4×6 +charge',''],[5,'4×6 +charge','PIC'],[6,'3×8 -charge','Taper']]),
+fatigue:{rx:'3×8 -15%',note:''}},
+{n:'Développé Épaules (Panatta/Haltères)',tag:'accessory',yt:Y('shoulder press machine'),tempo:'2-1-2-0',rest:'2 min',sets:4,
+howto:'Machine ou haltères. Presser 2sec, pause, descente 2sec. Deltoïde antérieur, force épaule.',cue:'Pas d\'hyperextension lombaire.',
+weeks:Wk([[1,'4×8-10','CALIBRER'],[2,'4×8-10 +charge',''],[3,'4×8-10 +charge',''],[4,'4×8 +charge',''],[5,'4×8 +charge','PIC'],[6,'3×10 -charge','Taper']]),
+fatigue:{rx:'3×10 -15%',note:''}},
+{n:'Dips Lestés',tag:'accessory',yt:Y('weighted dips'),tempo:'3-1-2-0',rest:'90 sec',sets:3,
+howto:'Inclinaison avant (pec bas). Descente 3sec amplitude complète, pause 1sec. Pec bas + triceps.',cue:'Amplitude complète.',
+weeks:Wk([[1,'3×8-10','CALIBRER'],[2,'3×8-10 +charge',''],[3,'3×8-10 +charge',''],[4,'3×8 +charge',''],[5,'3×8 +charge','PIC'],[6,'3×8 BW','Taper']]),
+fatigue:{rx:'3×8 BW',note:''}},
+{n:'Pec Deck',tag:'accessory',yt:Y('pec deck machine'),tempo:'2-1-3-0',rest:'90 sec',sets:3,
+howto:'Isolation pec, tension constante. Contraction 1sec (serrer), ouverture LENTE 3sec → chercher l\'étirement complet. Congestion.',cue:'L\'étirement chargé = le gain. Pas de à-coups.',
+weeks:Wk([[1,'3×12-15','CALIBRER'],[2,'3×12-15 +charge',''],[3,'3×12-15 +charge',''],[4,'3×12 +charge',''],[5,'3×12 +charge','PIC'],[6,'3×15 -charge','Taper']]),
+fatigue:{rx:'2×15',note:''}},
+{n:'Élévations Latérales + Triceps poulie (SS)',tag:'accessory',parts:['Élévations latérales','Extension triceps poulie'],yt:Y('lateral raise tricep pushdown'),tempo:'voir',rest:'75 sec',sets:4,
+howto:'<strong>SUPERSET.</strong> Élévations latérales (2-0-3-0, descente lente 3sec, jusqu\'à l\'horizontale) = LARGEUR d\'épaule, priorité plage. Enchaîné Extension triceps poulie (2-0-2-1) = volume triceps.',cue:'Élévations : pas au-dessus de l\'horizontale, pas de balancier.',
+weeks:Wk([[1,'4×(12-15 + 12-15)','CALIBRER'],[2,'4×(12-15+12-15) +ch',''],[3,'4×(12-15+12-15) +ch',''],[4,'4×(12+12) +ch',''],[5,'4×(12+12) +ch','PIC'],[6,'3×(15+15)','Taper']]),
+fatigue:{rx:'3×(12+12)',note:''}},
+{n:'Abdos + Mollets (rotation)',tag:'core',yt:Y('hanging leg raise hollow hold'),tempo:'Contrôlé',rest:'45-60 sec',sets:0,
+howto:'<strong>Rotation 3 stations :</strong><br><strong>Hanging Leg Raises:</strong> suspendu, monter jambes par flexion hanche, pas de balancier. Abdos bas.<br><strong>Hollow Body Hold:</strong> allongé, bas du dos plaqué, bras+jambes tendus décollés. Gainage anti-extension, densité du grand droit.<br><strong>Standing Calf Raise:</strong> amplitude COMPLÈTE, étirement max en bas tenu 2-3sec, contraction haute. Mollet (1/3 fréquence semaine).',cue:'Mini-dose abdos lundi (gros bloc = vendredi).',
+weeks:Wk([[1,'Leg Raises 3×10-12 + Hollow 3×20-30s + Calf 4×15-20','CALIBRER'],[2,'idem','+étirement calf'],[3,'Leg Raises 3×12 + Hollow 3×30s + Calf 4×18','+charge calf'],[4,'idem','+charge'],[5,'Leg Raises 3×12 lestées + Hollow 3×35s + Calf 4×20','PIC'],[6,'Leg Raises 2×10 + Calf 3×15','Taper']]),
+fatigue:{rx:'Leg Raises 2×10 + Calf 3×15',note:''}},
+{n:'WOD — PUMP & BURN (haut + brûle)',tag:'wod',yt:Y('ski erg devil press'),tempo:'',rest:'',sets:0,
+howto:'<strong>CIBLE : congestion haut du corps + capacité lactique + dépense. Dominante haut → épargne les jambes pour le tempo de demain.</strong><br>Devil Press = burpee + double snatch haltères. Ski Erg = tirage haut du corps, zéro impact jambes.<br>▶ <a href="'+Y('devil press dumbbell')+'" target="_blank">Devil Press</a> · <a href="'+Y('ski erg form')+'" target="_blank">Ski Erg</a>',
+cue:'Chaque semaine un WOD différent, même cible. Note ton score.',
+weeks:Wk([[1,'AMRAP 14min: 12cal Ski + 8 Devil Press@2×15 + 12 Push-ups','SCORE = tours. Réf'],[2,'EMOM 15min: min1 10 Devil Press / min2 15cal Ski / min3 15 Push-ups','Réf EMOM'],[3,'AMRAP 14min: 10 DB Snatch@22.5/c + 12cal Ski + 10 Dips','Densif'],[4,'5 rounds For Time: 12 Devil Press@2×15 + 15cal Ski + 20 Push-ups','Chrono'],[5,'AMRAP 16min: 8 Devil Press@2×17.5 + 14cal Ski + 12 Push-ups + 10 Dips','PIC'],[6,'AMRAP 10min: 8 Devil Press@2×15 + 12cal Ski + 10 Push-ups','Taper léger']]),
+fatigue:{rx:'AMRAP 8min même mvts, allégé',note:''}}]},
+
+{day:2,nm:'RUN — TEMPO / SEUIL',wu:'TEMPO',type:'run',dur:['~50','~52','~52','~55','~58','~45'],ex:[
+{n:'Tempo / Seuil',tag:'cardio',yt:Y('tempo run threshold'),tempo:'',rest:'',sets:0,
+howto:'<strong>CIBLE : seuil lactique = l\'allure que tu tiens longtemps = facteur n°1 sur 10km.</strong><br>Allure 4\'15-4\'30/km, FC ~165-175 ("comfortably hard" : tu peux dire 3-4 mots, pas une phrase).<br>Le passage fractionné (2×) → continu (S3+) fait monter le seuil.',cue:'Glucides relevés la veille + avant (séance intense en déficit).',
+weeks:Wk([[1,'2×10min @4:25 · récup 3min trot','Réf seuil'],[2,'2×12min @4:20 · récup 3min',''],[3,'20min continu @4:20','Continu'],[4,'25min continu @4:15',''],[5,'30min continu @4:15','PIC'],[6,'2×10min @4:20','Taper']]),
+fatigue:{rx:'Convertir en Z2 30-40min si jambes vides',note:''}}]},
+
+{day:3,nm:'PULL — DOS/BICEPS/DELT POST + GRIP DÉDIÉ',wu:'PULL',type:'gym',dur:['~90','~92','~95','~95','~100','~78'],ex:[
+{n:'Tractions Lestées',tag:'pillar',yt:Y('weighted pull ups'),tempo:'3-1-2-0',rest:'2-3 min',sets:4,
+howto:'Ceinture/gilet. Dépression scapulaire, poitrine vers barre, menton au-dessus. Descente 3sec, amplitude COMPLÈTE. La largeur dorsale = base du V plage. La sèche va alléger ton poids → tractions plus faciles, profites-en.',cue:'Pas de kipping. Reine du dos, faite fraîche.',
+weeks:Wk([[1,'4×5-6','CALIBRER'],[2,'4×5-6 +charge',''],[3,'4×5-6 +charge',''],[4,'4×5 +charge',''],[5,'4×5 +charge','PIC'],[6,'3×5 -charge','Taper']]),
+fatigue:{rx:'4×max BW',note:''}},
+{n:'Panatta Super High Row — UNILATÉRAL',tag:'accessory',yt:Y('panatta high row machine'),tempo:'2-1-2-0',rest:'90 sec',sets:4,
+howto:'<strong>UN BRAS à la fois.</strong> Angle haut = lats supérieurs + rhomboïdes. Support pec = zéro triche lombaire. Unilatéral = correction asymétrie + amplitude max. Alterner G/D sans repos entre les côtés (gain de temps).',cue:'Note tout déséquilibre G/D. Étirement complet en avant.',
+weeks:Wk([[1,'3-4×8-10/bras','CALIBRER G/D'],[2,'4×8-10/bras +charge',''],[3,'4×8-10/bras +charge',''],[4,'4×8/bras +charge',''],[5,'4×8/bras +charge','PIC'],[6,'3×10/bras','Taper']]),
+fatigue:{rx:'3×10/bras -15%',note:''}},
+{n:'Panatta Super Low Row — UNILATÉRAL',tag:'accessory',yt:Y('panatta low row machine'),tempo:'2-1-2-0',rest:'90 sec',sets:3,
+howto:'<strong>UN BRAS.</strong> Angle bas = épaisseur milieu/bas du dos. Complète le High Row sur un autre vecteur. Unilatéral, alterné sans repos entre côtés.',cue:'Tire avec le coude, pas la main.',
+weeks:Wk([[1,'3×10-12/bras','CALIBRER'],[2,'3×10-12/bras +ch',''],[3,'3×10-12/bras +ch',''],[4,'3×10/bras +ch',''],[5,'3×10/bras +ch','PIC'],[6,'3×12/bras','Taper']]),
+fatigue:{rx:'2×12/bras',note:''}},
+{n:'Pull-Over (machine/poulie)',tag:'accessory',yt:Y('cable pullover lats'),tempo:'2-1-3-0',rest:'90 sec',sets:3,
+howto:'Bras quasi tendus. Tirer par extension d\'épaule, étirement lats en haut, contraction en bas. ZÉRO biceps, zéro grip. Isolation lats = largeur.',cue:'Bras tendus, ressentir les lats.',
+weeks:Wk([[1,'3×12-15','CALIBRER'],[2,'3×12-15 +ch',''],[3,'3×12 +ch',''],[4,'3×12 +ch',''],[5,'3×12 +ch','PIC'],[6,'3×15','Taper']]),
+fatigue:{rx:'2×15',note:''}},
+{n:'Curl Incliné + Reverse Pec Deck (SS)',tag:'accessory',parts:['Curl incliné haltères','Reverse Pec Deck'],yt:Y('incline dumbbell curl reverse pec deck'),tempo:'voir',rest:'75 sec',sets:4,
+howto:'<strong>SUPERSET.</strong> Curl incliné haltères (3-0-2-1) = biceps en position étirée (chef long = volume). Enchaîné Reverse Pec Deck (2-1-2-1) = deltoïde POSTÉRIEUR (épaule 3D vue de profil, plage).',cue:'Curl : coudes fixes en arrière (incliné). Reverse : serrer les omoplates.',
+weeks:Wk([[1,'4×(10-12 + 15)','CALIBRER'],[2,'4×(10-12+15) +ch',''],[3,'4×(10-12+15) +ch',''],[4,'4×(10+15) +ch',''],[5,'4×(10+15) +ch','PIC'],[6,'3×(12+15)','Taper']]),
+fatigue:{rx:'3×(10+15)',note:''}},
+{n:'Curl Marteau + Seated Calf (SS)',tag:'accessory',parts:['Curl marteau','Seated Calf'],yt:Y('hammer curl seated calf raise'),tempo:'voir',rest:'60 sec',sets:3,
+howto:'<strong>SUPERSET.</strong> Curl marteau (2-0-2-0) = brachial + avant-bras (épaisseur bras). Enchaîné Seated Calf (2-2-3-0) = soléaire (mollet genou plié, portion différente du standing — épaisseur). Mollet 2/3 fréquence semaine.',cue:'Marteau : prise neutre. Calf : amplitude complète, étirement bas.',
+weeks:Wk([[1,'3×(10-12 + 15-20)','CALIBRER'],[2,'3×(10-12+15-20) +ch',''],[3,'3×(10-12+15-20) +ch',''],[4,'3×(12+18) +ch',''],[5,'3×(12+18) +ch','PIC'],[6,'3×(12+15)','Taper']]),
+fatigue:{rx:'2×(12+15)',note:''}},
+{n:'GRIP DÉDIÉ (séparé du WOD)',tag:'grip',yt:Y('grip strength farmer hold dead hang'),tempo:'',rest:'60-90 sec',sets:0,
+howto:'<strong>CIRCUIT ~8-10min, après la muscu. Développe les 3 types de grip : support + crush + pinch.</strong><br><strong>Barre strongman:</strong> chargée, tenue max time.<br><strong>Dead Hang:</strong> dispo partout, prise pronation, épaules actives.<br><strong>DB hold tête hexagonale:</strong> tenir l\'haltère par la tête (prise large) = support dur.<br><strong>Pinch plate / Plate flip:</strong> disques lisses pincés pouce-doigts = pince (qualité neuve).<br><strong>Towel dead hang:</strong> serviette sur barre = crush.<br><strong>Corde:</strong> montées + descente lente (étage).<br>▶ <a href="'+Y('pinch plate grip')+'" target="_blank">Pinch</a> · <a href="'+Y('rope climb')+'" target="_blank">Corde</a> · <a href="'+Y('farmer hold strongman bar')+'" target="_blank">Barre</a>',
+cue:'⚠️ Garde-fou peau : si main à vif (callosité), bascule sur pinch/DB hold/barre (non abrasifs), saute corde+towel cette semaine.',
+weeks:Wk([[1,'Barre strongman tenue max 3× + Dead Hang 3×max','NOTER TEMPS'],[2,'DB hold tête hexa 3×max/main + Pinch plate 3×30s','Pinch neuf'],[3,'Farmer carry barre strongman 3×30m + Rope climb 3 montées','Corde'],[4,'Barre strongman tenue 3× + Towel dead hang 2×max','Allègement peau'],[5,'Farmer carry lourd 4×25m + Rope climb 3-4 + Plate flip 3×8','PIC'],[6,'Dead hang lesté 2×max + Pinch plate 2×max','Taper']]),
+fatigue:{rx:'Dead hang 2×max + DB hold 2×max/main',note:''}},
+{n:'WOD — ENDURANCE TRACTIONS + CARDIO',tag:'wod',yt:Y('pull up cardio wod'),tempo:'',rest:'',sets:0,
+howto:'<strong>CIBLE : endurance de tractions (≠ force) + cardio. Le cardio non-grip entre les séries laisse récupérer les avant-bras (grip déjà servi par le bloc dédié).</strong><br>Petites séries de pull-ups répétées (pas à l\'échec) + cardio (assault bike, ski, burpees, box).<br>▶ <a href="'+Y('kipping vs strict pull up endurance')+'" target="_blank">Pull-Up endurance</a>',
+cue:'Si avant-bras/peau saturent : réduis le volume pull-ups cette semaine. WOD différent chaque semaine.',
+weeks:Wk([[1,'EMOM 15min: min1 6-8 Pull-ups / min2 12-15cal Bike / min3 10 Burpees','Réf'],[2,'AMRAP 14min: 5 Pull-ups + 12cal Ski + 15 Air Squats','Réf AMRAP'],[3,'For Time 10-8-6-4-2 Pull-ups + 10cal Bike entre chaque','Densif'],[4,'EMOM 16min: min1 8 Pull-ups / min2 15cal Ski / min3 12 KB Swing@24 / min4 repos','+volume'],[5,'AMRAP 16min: 6 Pull-ups + 10 Box Jump + 14cal Bike','PIC'],[6,'EMOM 12min: min1 5 Pull-ups / min2 12cal Bike','Taper']]),
+fatigue:{rx:'EMOM 10min: 4 Pull-ups / 12cal bike',note:''}}]},
+
+{day:4,nm:'RUN — INTERVALLES VMA',wu:'VMA',type:'run',dur:['~52','~52','~55','~58','~55','~48'],ex:[
+{n:'Intervalles VMA',tag:'cardio',yt:Y('VMA interval running'),tempo:'',rest:'',sets:0,
+howto:'<strong>CIBLE : VO2max + vitesse pure + économie de course. Le run qui te rend rapide.</strong><br>Allure VMA ~3\'55-4\'10/km. 400m = vitesse/VO2max, 800-1000m = tenue de l\'allure rapide (spécifique 10km). On alterne.<br>FC pic proche max (181-201). Récup trot complète entre.',cue:'Échauffement VMA obligatoire (15min + lignes droites). Glucides avant.',
+weeks:Wk([[1,'6×400m @3:55-4:00 · r1\'30 trot','Réf VMA'],[2,'5×800m @4:05-4:10 · r2min',''],[3,'8×400m @3:55 · r1\'30',''],[4,'5×1000m @4:10 · r2\'30',''],[5,'6×800m @4:00 · r2min','PIC'],[6,'4×400m @VMA · r1\'30','Taper']]),
+fatigue:{rx:'Réduire à 4 reps OU convertir Z2 si jambes vides',note:''}}]},
+
+{day:5,nm:'FULL — EXPLO BAS + JAMBES + RAPPEL HAUT + BRAS + ABDOS',wu:'FULL',type:'gym',dur:['~100','~102','~105','~105','~108','~85'],ex:[
+{n:'Explosivité Bas (Sauts)',tag:'explosive',yt:Y('box jump broad jump depth jump'),tempo:'Maximal',rest:'1m30-2m',sets:0,
+howto:'<strong>EN OUVERTURE, SNC frais. Suite directe du Bridge — qualité prioritaire à maintenir (Broad Jump 2.95m).</strong><br><strong>Box Jump:</strong> exploser haut, atterrir doux.<br><strong>Broad Jump:</strong> exploser AVANT, distance max, NOTER.<br><strong>Depth Jump:</strong> tomber de box 40-60cm, rebondir immédiat (contact <0.25s).<br><strong>SL variations:</strong> 1 jambe, noter asymétrie.<br>▶ <a href="'+Y('depth jump plyometric')+'" target="_blank">Depth Jump</a> · <a href="'+Y('broad jump distance')+'" target="_blank">Broad Jump</a>',
+cue:'Récup COMPLÈTE. Mesure hauteur/distance. Cible : ne pas descendre sous 2.90m au Broad Jump.',
+weeks:Wk([[1,'Box Jump 3×3 + Broad Jump 3×3','NOTER haut+dist'],[2,'Depth Jump 3×3 + Broad Jump 3×3','Mesure'],[3,'Depth Jump 3×4 + SL Box Jump 3×3/j','Asymétrie'],[4,'Reactive Hops 3×5 + Broad Jump 3×3','Réactif'],[5,'TEST Broad Jump max + Depth Jump 3×3','PIC — bats 2.95m'],[6,'Box Jump 2×3 léger','Taper']]),
+fatigue:{rx:'SKIP ou Box Jump 2×3 léger',note:''}},
+{n:'Pendulum Squat',tag:'legs',yt:Y('pendulum squat'),tempo:'3-1-2-0',rest:'2 min',sets:3,
+howto:'Quad, volume, étirement profond. Pause 1sec en bas. ZÉRO stress lombaire (remplace le squat barre — pattern barre repris à l\'automne). Charge MAINTIEN, pas de PR (protéger les runs).',cue:'Amplitude complète, contrôlé.',
+weeks:Wk([[1,'3×8-10','CALIBRER'],[2,'3×8-10 +charge',''],[3,'3×8-10 +charge',''],[4,'3×8-10',''],[5,'3×8-10','PIC'],[6,'3×10 léger','Taper']]),
+fatigue:{rx:'3×10 -15%',note:''}},
+{n:'Hip Thrust',tag:'legs',yt:Y('hip thrust'),tempo:'2-2-2-0',rest:'2 min',sets:3,
+howto:'Dos calé sur banc. Hanches haut, PAUSE 2sec, serrer fessiers. Menton rentré. Fessier = esthétique profil (équilibre jambes fines) + moteur course/explosivité.',cue:'Pas d\'hyperextension lombaire.',
+weeks:Wk([[1,'3×8-10','CALIBRER'],[2,'3×8-10 +charge',''],[3,'3×8-10 +charge',''],[4,'3×8 +charge',''],[5,'3×8 +charge','PIC'],[6,'3×10 léger','Taper']]),
+fatigue:{rx:'3×10 -15%',note:''}},
+{n:'Bulgarian Split Squat (haltères)',tag:'legs',yt:Y('bulgarian split squat dumbbell'),tempo:'2-1-2-0',rest:'90 sec',sets:3,
+howto:'<strong>UNILATÉRAL roi.</strong> Pied arrière sur banc. Descente contrôlée, genou avant. Quad + fessier + stabilité. Corrige tes ASYMÉTRIES. Charge modérée (pas de PR, protéger runs).',cue:'Note la différence G/D. Buste légèrement penché = plus fessier.',
+weeks:Wk([[1,'3×8-10/jambe','CALIBRER G/D'],[2,'3×8-10/j +charge',''],[3,'3×8-10/j +charge',''],[4,'3×8/j +charge',''],[5,'3×8/j +charge','PIC'],[6,'3×10/j léger','Taper']]),
+fatigue:{rx:'2×10/j PDC',note:''}},
+{n:'Leg Curl unilatéral',tag:'legs',yt:Y('single leg curl'),tempo:'2-1-3-0',rest:'90 sec',sets:3,
+howto:'<strong>UNILATÉRAL.</strong> Une jambe. Ischios. Étirement contrôlé 3sec. Corrige asymétrie + santé genou (équilibre quad/ischio).',cue:'Hanches collées au banc, pas de décollage.',
+weeks:Wk([[1,'3×10-12/jambe','CALIBRER'],[2,'3×10-12/j +ch',''],[3,'3×10-12/j +ch',''],[4,'3×10/j +ch',''],[5,'3×10/j +ch','PIC'],[6,'3×12/j','Taper']]),
+fatigue:{rx:'2×12/j',note:''}},
+{n:'Leg Extension',tag:'legs',yt:Y('leg extension'),tempo:'2-1-2-1',rest:'75 sec',sets:3,
+howto:'Finition quad, congestion. Extension complète, contraction 1sec, descente 2sec. <em>1er exo à alléger si fatigue trop forte.</em>',cue:'Reps hautes, congestion.',
+weeks:Wk([[1,'3×12-15','CALIBRER'],[2,'3×12-15 +ch',''],[3,'3×12-15 +ch',''],[4,'3×12 +ch',''],[5,'3×12 +ch','PIC'],[6,'3×15','Taper']]),
+fatigue:{rx:'SKIP si pressé',note:''}},
+{n:'Rappel Haut : Incliné machine + High Row',tag:'accessory',parts:['Développé incliné machine','High Row / tirage vertical'],yt:Y('incline machine press high row'),tempo:'2-1-2-0',rest:'90 sec',sets:3,
+howto:'<strong>2e dose pec + dos de la semaine (fréquence).</strong> Développé incliné machine 3×8-10 (pec haut) PUIS High Row ou tirage vertical 3×10-12 (dos). Machines = peu fatigant en fin de semaine. <em>Secondaire : à alléger si temps/fatigue.</em>',cue:'Rappel, pas de PR. Qualité.',
+weeks:Wk([[1,'Inc 3×8-10 + Row 3×10-12','CALIBRER'],[2,'+charge',''],[3,'+charge',''],[4,'+charge',''],[5,'+charge','PIC'],[6,'allégé','Taper']]),
+fatigue:{rx:'2×10 chaque, léger',note:''}},
+{n:'Bras Focus : Curl + Triceps + Marteau (SS)',tag:'accessory',parts:['Curl barre EZ/haltères','Extension triceps overhead','Curl marteau','Standing Calf'],yt:Y('biceps triceps superset'),tempo:'voir',rest:'75 sec',sets:4,
+howto:'<strong>JOURNÉE BRAS (volume). Supersets.</strong><br>SS1 : Curl barre EZ/haltères (3-0-2-1) + Extension triceps overhead (3-0-2-0, long head étiré). 4 séries.<br>SS2 : Curl marteau/concentration (3×12) + Standing Calf (3×15-20, mollet 3/3 semaine).',cue:'Bras congestionné à bloc. Triceps overhead = volume long head.',
+weeks:Wk([[1,'SS1 4×(10-12+10-12) · SS2 3×(12+15-20)','CALIBRER'],[2,'+charge',''],[3,'+charge',''],[4,'+charge',''],[5,'+charge','PIC'],[6,'3×(12+12) · 3×(12+15)','Taper']]),
+fatigue:{rx:'SS1 3× · SS2 2×',note:''}},
+{n:'GROS BLOC ABDOS (circuit 3 tours)',tag:'core',yt:Y('hanging leg raise cable crunch pallof'),tempo:'Contrôlé',rest:'45 sec',sets:0,
+howto:'<strong>Cœur abdos de la semaine (3 fonctions du six-pack). Circuit 3 tours.</strong><br><strong>Hanging Leg Raises:</strong> abdos bas + fléchisseurs (le plus dur à révéler). Pas de balancier.<br><strong>Cable Crunch (à genoux, poulie haute):</strong> grand droit haut AVEC CHARGE = épaisseur/densité (le six-pack est un muscle, il s\'épaissit avec résistance).<br><strong>Pallof Press / Woodchopper:</strong> obliques + anti-rotation = taille dessinée (pas élargie).',cue:'Le déficit révèle, le cable crunch chargé épaissit. Progression : charge crunch ↑, leg raises pliés→tendus→lestés.',
+weeks:Wk([[1,'Leg Raises 10-12 + Cable Crunch 12-15 + Pallof 10/c','CALIBRER'],[2,'+charge crunch','Leg raises tendus'],[3,'+charge',''],[4,'+charge',''],[5,'Leg raises lestées + crunch lourd + Pallof 12/c','PIC'],[6,'2 tours légers','Taper']]),
+fatigue:{rx:'2 tours légers',note:''}},
+{n:'WOD — FULL SEND (full body, dépense max)',tag:'wod',yt:Y('thruster devil press assault bike wod'),tempo:'',rest:'',sets:0,
+howto:'<strong>CIBLE : conditioning full body + dépense max + explosivité. Le jour où on IMPLIQUE les jambes (week-end course souple derrière).</strong><br>Thrusters (front squat + push press), Devil Press, Assault Bike. Tes mouvements préférés.<br>▶ <a href="'+Y('thruster crossfit')+'" target="_blank">Thruster</a> · <a href="'+Y('devil press')+'" target="_blank">Devil Press</a>',
+cue:'Tu as la caisse — vas-y dense. WOD différent chaque semaine. Note le chrono/score.',
+weeks:Wk([[1,'21-15-9 For Time: Thrusters@2×20 + Devil Press@2×15 + cal Assault Bike','Réf chrono'],[2,'AMRAP 15min: 10 Thrusters@2×17.5 + 8 Devil Press + 12cal Bike','Réf AMRAP'],[3,'21-15-9-9 For Time: Thrusters@2×22.5 + Devil Press@2×15 + cal Bike','Densif'],[4,'5 rounds For Time: 12 Thrusters + 10 Devil Press + 15cal Bike + 10 Box Jump','+volume'],[5,'21-18-15-12-9 For Time: Thrusters@2×20 + Devil Press@2×17.5 + cal Bike','PIC'],[6,'15-12-9 For Time: Thrusters@2×17.5 + Devil Press@2×12.5 + cal Bike','Taper']]),
+fatigue:{rx:'15-12-9 allégé',note:''}}]},
+
+{day:6,nm:'RUN — LONG ZONE 2',wu:'Z2',type:'run',dur:['55','60','65','70','75','50'],ex:[
+{n:'Long Z2',tag:'cardio',yt:Y('zone 2 long run'),tempo:'',rest:'',sets:0,
+howto:'<strong>CIBLE : base aérobie + endurance + COMBUSTION (sèche) + récup active des jambes.</strong><br>Allure 5\'30-6\'00/km, FC 137-151 (ta Z2). Tu dois parler en phrases complètes.<br>Plus gros brûleur de calories de la semaine. Sert aussi de récup après le vendredi.',cue:'Travaille la CADENCE 170-172 (tu es à 167) sur les 20 premières min — métronome 170, foulée plus courte.',
+weeks:Wk([[1,'55min @FC 137-151','Base + cadence'],[2,'60min',''],[3,'65min',''],[4,'70min','Volume'],[5,'75min','PIC volume'],[6,'50min','Taper']]),
+fatigue:{rx:'-15min',note:''}}]},
+
+{day:7,nm:'REPOS / NATATION LAC',wu:'',type:'rest',dur:['—','—','—','—','—','—'],ex:[
+{n:'Repos ou récup active',tag:'cardio',yt:'',tempo:'',rest:'',sets:0,
+howto:'<strong>REPOS = défaut.</strong> Récupération = le moment où le corps construit (et sèche).<br><strong>Option : natation lac eau libre</strong> (récup active, 0 impact, mobilité épaules, combustion douce). Crawl/brasse alterné par blocs. Focus expiration continue sous l\'eau. Bouée de sécurité.',cue:'Si tu nages : ça reste léger, c\'est de la récup, pas une séance.',
+weeks:Wk([[1,'Repos OU nat 30-40min','—'],[2,'Repos OU nat',''],[3,'Repos OU nat',''],[4,'Repos OU nat',''],[5,'Repos (PIC = priorité récup)',''],[6,'Repos','Taper']]),
+fatigue:{rx:'Repos total',note:''}}]}
+];
+
+var GOALS=[
+{cat:'COMPOSITION (objectif plage)',it:[{t:'Poids',c:'72-73 kg'},{t:'Body fat',c:'9-11%'},{t:'Abdos',c:'Visibles + denses'},{t:'Taille',c:'-3 à -5 cm tour de taille'}]},
+{cat:'HAUT DU CORPS',it:[{t:'Largeur épaules',c:'Effet V marqué'},{t:'Volume bras',c:'Maintien/léger gain'},{t:'Tractions endurance',c:'>30 strict enchaînées'},{t:'Tractions lestées',c:'Maintien +35kg'}]},
+{cat:'COURSE',it:[{t:'10 km',c:'<40 min',s:'Stretch <39min'},{t:'Allure seuil',c:'Tenir 30min @4:15'},{t:'Cadence',c:'170-172 spm'},{t:'Z2 @145bpm',c:'<5:35/km'}]},
+{cat:'EXPLOSIVITÉ (maintien)',it:[{t:'Broad Jump',c:'>2.90m',s:'Stretch >2.95m'},{t:'Box/Depth Jump',c:'Maintien hauteur'},{t:'Asymétrie sauts',c:'<10%'}]},
+{cat:'GRIP',it:[{t:'Barre strongman',c:'Tenue max ↑'},{t:'Dead hang',c:'Maintien/↑'},{t:'Pinch',c:'Qualité neuve établie'}]},
+{cat:'JAMBES (maintien)',it:[{t:'Masse',c:'Maintien (dev = automne)'},{t:'Asymétries',c:'Réduites (unilatéral)'},{t:'Mollets',c:'Densité sèche'}]}
+];
+
+function render(){var a=document.getElementById('app'),bk=document.getElementById('bkB'),tt=document.getElementById('tT'),ph=document.getElementById('phB');bk.classList.toggle('hd',S.p==='intro');ph.classList.toggle('hd',S.p==='intro'||S.p==='goals');
+if(S.p==='intro'){tt.textContent='SHARP';a.innerHTML=rI()}
+else if(S.p==='goals'){tt.textContent='OBJECTIFS';a.innerHTML=rG()}
+else if(S.p==='weeks'){tt.textContent='SEMAINES';a.innerHTML=rWk()}
+else if(S.p==='days'){tt.textContent='SEMAINE '+S.w;ph.textContent=PH[S.w];a.innerHTML=rDs()}
+else if(S.p==='day'){tt.textContent='S'+S.w+' · '+DN[S.d];ph.textContent=PH[S.w];a.innerHTML=rD()}}
+
+function rI(){return '<div class="fi"><div class="ih"><h1>SHARP</h1><div class="su">6 semaines · affûtage</div><div class="tg">RECOMP HAUT DU CORPS · SÈCHE · 10KM</div></div>'+
+'<div class="is"><h3>◆ OBJECTIF</h3><p>Définition maximale pour la plage. <b>Recomposition haut du corps</b> (pecs, épaules, dos, bras) + <b>sèche</b>. Jambes en maintien, course comme outil de combustion + perf 10km. Explosivité et grip maintenus (suite du Bridge).</p></div>'+
+'<div class="is"><h3>◆ STRUCTURE</h3><ul><li><b>Lun</b> — Push + explo haut + abdos + WOD</li><li><b>Mar</b> — Run Tempo/Seuil</li><li><b>Mer</b> — Pull + grip dédié + WOD endurance tractions</li><li><b>Jeu</b> — Run Intervalles VMA</li><li><b>Ven</b> — Full : explo bas + jambes + bras + gros abdos + WOD</li><li><b>Sam</b> — Run Long Z2</li><li><b>Dim</b> — Repos / nat lac</li></ul></div>'+
+'<div class="is"><h3>◆ FOCUS</h3><div class="ag"><div class="ai2">PECS</div><div class="ai2">ÉPAULES</div><div class="ai2">DOS</div><div class="ai2">BRAS</div><div class="ai2">ABDOS</div><div class="ai2">EXPLO</div><div class="ai2">GRIP</div><div class="ai2">10KM</div><div class="ai2">UNILAT.</div></div></div>'+
+'<div class="is"><h3>◆ PROGRESSION</h3><p><b>S1-2</b> Installation (calibration charges + scores)<br><b>S3-4</b> Densification<br><b>S5</b> PIC<br><b>S6</b> Taper — arriver sec ET frais</p></div>'+
+'<div class="is"><h3>◆ RÈGLES</h3><p>WOD <b>différent chaque semaine</b>, cible fixe par jour. Jambes en <b>maintien</b> (dev = automne). En sèche : qualité > quantité, surveille récup + peau (grip).</p></div>'+
+'<button class="sb" onclick="nav(\'weeks\')">PROGRAMME →</button>'+
+'<button class="sb alt" onclick="nav(\'goals\')">OBJECTIFS →</button></div>'}
+
+function rG(){var h='<div class="fi">';GOALS.forEach(function(g){h+='<div class="stt">'+g.cat+'</div><table class="otb"><tr><th>CIBLE</th><th>VALEUR</th></tr>';g.it.forEach(function(i){h+='<tr><td>'+i.t+'</td><td><b>'+i.c+'</b>'+(i.s?'<br><span style="color:var(--w);font-size:10px">'+i.s+'</span>':'')+'</td></tr>'});h+='</table>'});h+='<button class="sb" style="margin-top:16px" onclick="nav(\'weeks\')">PROGRAMME →</button></div>';return h}
+
+function rWk(){var h='<div class="fi"><div class="stt">6 SEMAINES</div><div class="wg">';for(var w=1;w<=6;w++){var c=w===5?'pk':w===6?'tp':'';h+='<div class="wc '+c+'" onclick="nav(\'days\',{w:'+w+'})"><div class="wn">S'+w+'</div><div class="wl">'+PH[w]+'</div></div>'}return h+'</div></div>'}
+
+function rDs(){var h='<div class="fi">';if(BF[S.w])h+='<div class="br"><h3>◆ BRIEFING S'+S.w+'</h3><p>'+BF[S.w]+'</p></div>';h+='<div class="stt">SÉANCES</div><div class="dg">';for(var d=1;d<=7;d++){var D=DAYS.find(function(x){return x.day===d}),dn=gDn(S.w,d),du=D&&D.dur[S.w-1]!=='—'?D.dur[S.w-1]+'min':'';var cls=D.type==='run'?'run':D.type==='rest'?'rest':'';h+='<div class="dc '+cls+'" onclick="nav(\'day\',{w:'+S.w+',d:'+d+'})"><div class="dn">'+DN[d]+'</div><div class="dd">'+du+'</div>'+(dn?'<div class="dk">✓</div>':'')+'</div>'}return h+'</div></div>'}
+
+function rD(){var D=DAYS.find(function(x){return x.day===S.d});if(!D)return'';var w=S.w,h='<div class="fi">';
+if(BF[w]&&(S.d===1))h+='<div class="br"><h3>◆ BRIEFING S'+w+'</h3><p>'+BF[w]+'</p></div>';
+if(D.wu&&WU[D.wu]){var Wu=WU[D.wu];h+='<div class="wu"><div class="wuh" onclick="tWu()"><span>'+Wu.nm+'</span><span class="wut">'+Wu.dur+'</span></div><div class="wub'+(S.oWu?' op':'')+'" id="wuBody">';Wu.ex.forEach(function(e){h+='<div class="we"><div class="wei"><div class="wen">'+e.n+'</div><div class="wed">'+e.d+'</div></div><div class="wev">'+e.v+'</div></div>'});h+='</div></div>'}
+D.ex.forEach(function(ex,ei){var wk=ex.weeks[w];if(!wk||wk.rx==='—')return;
+var tl=ex.tag==='pillar'?'PILIER':ex.tag==='explosive'?'EXPLO':ex.tag==='core'?'CORE/ABS':ex.tag==='grip'?'GRIP':ex.tag==='cardio'?'RUN':ex.tag==='wod'?'WOD':ex.tag==='legs'?'JAMBES':'';
+var id='e'+ei,op=S.oEx===id;
+h+='<div class="ec"><div class="eh '+ex.tag+'" onclick="tEx(\''+id+'\')"><span class="en">'+ex.n+'</span>';
+if(ex.rest)h+='<span class="et">'+ex.rest+'</span>';
+h+='<span class="et'+(ex.tag==='pillar'?' pl':'')+'">'+tl+'</span>';
+if(ex.yt)h+='<a href="'+ex.yt+'" target="_blank" class="ey" onclick="event.stopPropagation()">▶</a>';
+h+='</div><div class="eb'+(op?' op':'')+'" id="'+id+'">';
+h+='<div class="em">';if(ex.tempo)h+='<span class="tp2">TEMPO '+ex.tempo+'</span>';if(ex.rest)h+='<span>REPOS '+ex.rest+'</span>';h+='</div>';
+if(ex.howto)h+='<div class="ht">'+ex.howto+'</div>';
+if(ex.cue)h+='<div class="cu">'+ex.cue+'</div>';
+h+='<div class="rx2"><div class="lb">S'+w+' · '+PH[w]+'</div><div class="rv">'+wk.rx+'</div>'+(wk.note?'<div class="nt">'+wk.note+'</div>':'')+'</div>';
+if(wk.sg)h+='<div class="sg2">⚠ '+wk.sg+'</div>';
+if(w>1&&ex.sets>0&&!ex.parts){var pc=gL(w-1,S.d,ei,0,'kg');if(pc)h+='<div class="pd"><strong>S'+(w-1)+' set 1 :</strong> '+pc+'kg</div>'}
+if(ex.sets>0){var ns=parseInt((wk.rx.match(/(\d+)×/)||[])[1])||ex.sets;
+ if(ex.parts){
+  ex.parts.forEach(function(pn,pi){
+   var ppc=w>1?gL(w-1,S.d,ei,0,'kg'+pi):'';
+   h+='<div class="sl"><div class="sl-t">▸ '+pn+'</div>';
+   if(ppc)h+='<div class="pd" style="margin:0 0 6px"><strong>S'+(w-1)+' set 1 :</strong> '+ppc+'kg</div>';
+   for(var si=0;si<ns;si++){var ck=gL(w,S.d,ei,si,'kg'+pi),cr=gL(w,S.d,ei,si,'rp'+pi);h+='<div class="sr"><div class="sn2">'+(si+1)+'</div><div class="si"><input type="number" step="0.5" placeholder="kg" value="'+ck+'" onchange="sL('+w+','+S.d+','+ei+','+si+',\'kg'+pi+'\',this.value)"><span class="u">kg</span></div><div class="si"><input type="number" placeholder="reps" value="'+cr+'" onchange="sL('+w+','+S.d+','+ei+','+si+',\'rp'+pi+'\',this.value)"><span class="u">rep</span></div></div>'}
+   h+='</div>'});
+ }else{
+  h+='<div class="sl"><div class="sl-t">LOG PAR SÉRIE</div>';for(var si=0;si<ns;si++){var ck=gL(w,S.d,ei,si,'kg'),cr=gL(w,S.d,ei,si,'rp');h+='<div class="sr"><div class="sn2">'+(si+1)+'</div><div class="si"><input type="number" step="0.5" placeholder="kg" value="'+ck+'" onchange="sL('+w+','+S.d+','+ei+','+si+',\'kg\',this.value)"><span class="u">kg</span></div><div class="si"><input type="number" placeholder="reps" value="'+cr+'" onchange="sL('+w+','+S.d+','+ei+','+si+',\'rp\',this.value)"><span class="u">rep</span></div></div>'}h+='</div>';
+ }
+}
+var cn=gN(w,S.d,ei);h+='<textarea class="ln" placeholder="Notes (score WOD, ressenti, allures, mesures sauts...)" onchange="sN('+w+','+S.d+','+ei+',this.value)">'+cn+'</textarea>';
+h+='</div></div>'});
+h+='<button class="cb" onclick="sDn('+w+','+S.d+');alert(\'S'+w+' '+DN[S.d]+' ✓\');nav(\'days\',{w:'+w+'})">✓ SÉANCE TERMINÉE</button>';
+h+='<button class="cb exp" onclick="exportSession('+w+','+S.d+')">↗ EXPORTER POUR ANALYSE</button>';
+return h+'</div>'}
+
+function exportSession(w,d){var D=DAYS.find(function(x){return x.day===d});if(!D)return;var dt=new Date();var dateStr=dt.toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+var r='━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n◆ RAPPORT — SHARP\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n'+dateStr+'\nSemaine '+w+'/6 · '+DN[d]+' · '+D.nm+'\nPhase : '+PH[w]+'\n\n──── EXERCICES ────\n\n';
+var totalS=0,doneS=0;
+D.ex.forEach(function(ex,ei){var wk=ex.weeks[w];if(!wk||wk.rx==='—')return;
+r+='▸ '+ex.n+(ex.tag==='pillar'?' ⭐':'')+'\n';
+if(ex.tempo)r+='  Tempo '+ex.tempo+(ex.rest?' · Repos '+ex.rest:'')+'\n';
+r+='  Prescription : '+wk.rx+'\n';
+if(ex.sets>0){var ns=parseInt((wk.rx.match(/(\d+)×/)||[])[1])||ex.sets;
+ if(ex.parts){
+  ex.parts.forEach(function(pn,pi){
+   r+='  ▸ '+pn+'\n';var charges=[],reps=[];
+   for(var si=0;si<ns;si++){var ck=gL(w,d,ei,si,'kg'+pi),cr=gL(w,d,ei,si,'rp'+pi);totalS++;if(ck||cr){doneS++;r+='    S'+(si+1)+': '+(cr?cr+'r':'?')+' × '+(ck?ck+'kg':'?')+'\n';if(ck)charges.push(parseFloat(ck));if(cr)reps.push(parseInt(cr))}else{r+='    S'+(si+1)+': ⬜\n'}}
+   if(charges.length){var avg=(charges.reduce(function(a,b){return a+b},0)/charges.length).toFixed(1);r+='    Moy : '+avg+'kg';if(reps.length)r+=' · Reps '+reps.join('-');r+='\n'}
+  });
+ }else{
+  var charges=[],reps=[];for(var si=0;si<ns;si++){var ck=gL(w,d,ei,si,'kg'),cr=gL(w,d,ei,si,'rp');totalS++;if(ck||cr){doneS++;r+='  S'+(si+1)+': '+(cr?cr+'r':'?')+' × '+(ck?ck+'kg':'?')+'\n';if(ck)charges.push(parseFloat(ck));if(cr)reps.push(parseInt(cr))}else{r+='  S'+(si+1)+': ⬜\n'}}if(charges.length){var avg=(charges.reduce(function(a,b){return a+b},0)/charges.length).toFixed(1);r+='  Charge moy : '+avg+'kg';var pc=w>1?gL(w-1,d,ei,0,'kg'):'';if(pc){var diff=(charges[0]-parseFloat(pc)).toFixed(1);r+=' (S'+(w-1)+' set1 : '+pc+'kg '+(diff>0?'▲+'+diff:diff<0?'▼'+diff:'=')+')'}r+='\n';if(reps.length)r+='  Reps : '+reps.join('-')+'\n'}
+ }
+}
+var cn=gN(w,d,ei);if(cn)r+='  📝 '+cn+'\n';r+='\n'});
+r+='──── STATS ────\n\n';if(totalS>0)r+='Séries loguées : '+doneS+'/'+totalS+' ('+Math.round(doneS/totalS*100)+'%)\n\n';
+r+='━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nColle dans Claude : "Analyse ma séance"\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n';
+if(navigator.share){navigator.share({title:'SHARP S'+w+' '+DN[d],text:r}).catch(function(){cpExp(r)})}else{cpExp(r)}}
+function cpExp(r){if(navigator.clipboard){navigator.clipboard.writeText(r).then(function(){alert('Rapport copié ! Colle-le dans Claude.')}).catch(function(){fbCp(r)})}else{fbCp(r)}}
+function fbCp(r){var t=document.createElement('textarea');t.value=r;t.style.position='fixed';t.style.left='-9999px';document.body.appendChild(t);t.select();try{document.execCommand('copy');alert('Copié !')}catch(e){prompt('Copie manuelle :',r)}document.body.removeChild(t)}
+
+render();
+</script>
+</body></html>
