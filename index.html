@@ -111,7 +111,7 @@ h1,h2,h3,.lb{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spa
 <script>
 const Y=q=>"https://www.youtube.com/results?search_query="+encodeURIComponent(q+" technique");
 const DN=['','LUNDI','MARDI','MERCREDI','JEUDI','VENDREDI','SAMEDI','DIMANCHE'];
-const PH=['','INSTALLATION','INSTALLATION','DENSIFICATION','DENSIFICATION','PIC','TAPER'];
+const PH=['','B1 · INSTALL','B1 · INSTALL','B1 · MONTÉE','B1 · MINI-PIC','B2 · NOUVEAU','B2 · MONTÉE','B2 · MONTÉE','B2 · PIC','TAPER'];
 const LS='sharp_';
 let S={p:'intro',w:1,d:1,oEx:null,oWu:false};
 function sv(k,v){try{localStorage.setItem(LS+k,JSON.stringify(v))}catch(e){}}
@@ -129,12 +129,15 @@ function tWu(){S.oWu=!S.oWu;var el=document.getElementById('wuBody');if(el)el.cl
 function Wk(a){var r={};a.forEach(function(x){r[x[0]]={rx:x[1],note:x[2]||'',sg:x[3]||''}});return r}
 
 var BF={
-1:'<span class="kp">INSTALLATION.</span> Note TOUTES tes charges (S1=calibration) + hauteur sauts + distance Broad Jump + score WOD. C\'est ta référence pour tout le bloc.',
-2:'<span class="kp">INSTALLATION.</span> Légère montée en charge. Tu installes les patterns, les supersets, le circuit grip. Établis les scores WOD.',
-3:'<span class="kp">DENSIFICATION.</span> Charges montent, WOD plus denses, tempo continu sur le seuil. Le déficit commence à se sentir — gère ta récup.',
-4:'<span class="kp">DENSIFICATION.</span> On pousse le volume course (70min Z2). Charges muscu en progression. Surveille fatigue + peau (grip).',
-5:'<span class="kp">PIC.</span> Semaine la plus dure : WOD au sommet, runs intenses, volume max. Teste tes sauts (maintien explosivité). Donne tout.',
-6:'<span class="kp">TAPER.</span> Allègement -40%. Tu arrives à la plage SEC ET FRAIS. Volume réduit, on garde l\'intensité légère. Profite.'};
+1:'<span class="kp">BLOC 1 — INSTALLATION.</span> Note TOUTES tes charges (S1=calibration) + sauts + scores WOD. Référence du bloc. Déficit doux qui démarre.',
+2:'<span class="kp">BLOC 1 — INSTALLATION.</span> Légère montée. Patterns, supersets, circuit grip en place. Scores WOD établis.',
+3:'<span class="kp">BLOC 1 — MONTÉE.</span> Charges montent, WOD denses. Le déficit se sent — gère récup + sommeil.',
+4:'<span class="kp">BLOC 1 — MINI-PIC.</span> Dernière semaine du bloc 1 : bats tes scores. La semaine prochaine, NOUVELLES machines partout.',
+5:'<span class="kp">BLOC 2 — NOUVEAU STIMULUS.</span> Bascule machines premium : Wide Chest unilatéral, T-Bar Watson, Hack Squat, fly incliné disques... RE-CALIBRE tes charges sur les nouveaux exos (S5 = nouvelle référence). Moteurs inchangés (tractions, squat, hip thrust).',
+6:'<span class="kp">BLOC 2 — MONTÉE.</span> Charges montent sur les nouvelles machines. WOD inédits. La sèche est visible maintenant.',
+7:'<span class="kp">BLOC 2 — MONTÉE.</span> On pousse. Volume course au max. Surveille fatigue cumulée (déficit semaine 7).',
+8:'<span class="kp">BLOC 2 — PIC.</span> Semaine la plus dure du programme. Teste tes sauts (Broad Jump). Donne tout — derrière, c\'est le taper.',
+9:'<span class="kp">TAPER.</span> Allègement -40%. Tu pars à la plage le 14 août SEC ET FRAIS. Volume réduit, intensité légère. Profite du résultat.'};
 
 var WU={
 PUSH:{nm:'ÉCHAUFFEMENT PUSH',dur:'10 min',ex:[
@@ -168,144 +171,148 @@ Z2:{nm:'ÉCHAUFF. Z2',dur:'5 min',ex:[
 };
 
 var DAYS=[
-{day:1,nm:'PUSH — EXPLO + PECS/ÉPAULES/TRICEPS + ABDOS',wu:'PUSH',type:'gym',dur:['~85','~88','~92','~92','~95','~75'],ex:[
+{day:1,nm:'PUSH — EXPLO + PECS/ÉPAULES/TRICEPS + ABDOS',wu:'PUSH',type:'gym',dur:['~92','~95','~98','~98','~95','~98','~100','~102','~80'],ex:[
 {n:'Explosivité Upper',tag:'explosive',yt:Y('medicine ball slam plyo push up'),tempo:'Maximal',rest:'1m30',sets:0,
 howto:'<strong>EN OUVERTURE, SNC frais.</strong> Maintien de la puissance de poussée (transfert devil press/thrusters).<br><strong>MB Chest Pass:</strong> face mur, pousser explosif, le ballon quitte les mains.<br><strong>MB Slam:</strong> au-dessus tête, triple extension → projeter au sol.<br><strong>Plyo Push-Up:</strong> pompe explosive, mains décollent. Réception disque 20kg pour mesurer la hauteur.<br>▶ <a href="'+Y('medicine ball slam')+'" target="_blank">MB Slam</a> · <a href="'+Y('plyometric push up')+'" target="_blank">Plyo PU</a>',
 cue:'Récup complète entre séries. Qualité > fatigue. Note la hauteur/distance.',
-weeks:Wk([[1,'MB Chest Pass 3×5','NOTER DIST'],[2,'MB Slam 3×5',''],[3,'Plyo PU 3×5','Réception disque'],[4,'Plyo PU 3×5','Mesure hauteur'],[5,'MB Shotput 3×3/c + Plyo PU 3×4','PIC'],[6,'MB Slam 2×5','Léger']]),
+weeks:Wk([[1,'MB Chest Pass 3×5','NOTER DIST'],[2,'MB Slam 3×5',''],[3,'Plyo PU 3×5','Réception disque'],[4,'Plyo PU 3×5','Mesure hauteur — fin B1'],[5,'MB Slam 3×5','B2 reprise'],[6,'Plyo PU 3×5','Hauteur +'],[7,'MB Shotput 3×3/c','Rotatif'],[8,'Shotput 3×3/c + Plyo PU 3×4','PIC'],[9,'MB Slam 2×5','Taper']]),
 fatigue:{rx:'2×5 léger',note:''}},
-{n:'Développé Incliné Haltères',tag:'pillar',yt:Y('incline dumbbell press'),tempo:'3-1-2-0',rest:'2-3 min',sets:4,
-howto:'Banc incliné 30°. Haltères, amplitude complète, coudes ~45°. Descente 3sec, pause 1sec. Pec HAUT = le plus visible plage.',cue:'S1 = note tes charges. Pic de poitrine en haut du t-shirt.',
-weeks:Wk([[1,'4×6-8','CALIBRER'],[2,'4×6-8 +charge',''],[3,'4×6-8 +charge',''],[4,'4×6 +charge',''],[5,'4×6 +charge','PIC'],[6,'3×8 -charge','Taper']]),
+{n:'Squat Maintien Neural',tag:'legs',yt:Y('back squat speed'),tempo:'2-0-X-0',rest:'2 min',sets:3,
+howto:'<strong>MAINTIEN du pattern squat barre (1RM 150kg) — pas du développement.</strong> Descente contrôlée 2sec, remontée EXPLOSIVE à intention de vitesse max. À 70% c\'est un rappel neural quasi gratuit : zéro courbature, zéro impact sur le tempo de demain. Le vrai travail squat lourd reprend à l\'automne.<br>Montée en charge rapide : vide×5 → 60×3 → 85×2 → travail.',cue:'⚠️ 105kg = plafond standard. 110kg max si journée exceptionnelle. JAMAIS plus — ce n\'est pas le bloc pour ça.',
+weeks:Wk([[1,'3×3 @105kg (70%)','Explosif'],[2,'3×3 @105kg',''],[3,'3×3 @105kg',''],[4,'3×3 @105kg','Fin B1'],[5,'3×3 @105kg','B2'],[6,'3×3 @105-107.5kg',''],[7,'3×3 @107.5kg',''],[8,'3×3 @107.5kg max','PIC (72%)'],[9,'2×3 @100kg','Taper']]),
+fatigue:{rx:'2×3 @95kg ou SKIP',note:''}},
+{n:'Presse Pec Principale (B1: Incliné haltères / B2: Hammer Wide Chest UNI)',tag:'pillar',yt:Y('incline dumbbell press hammer iso lateral'),tempo:'3-1-2-0',rest:'2-3 min',sets:4,
+howto:'<strong>BLOC 1 (S1-4) — Développé incliné haltères :</strong> banc 30°, amplitude complète, coudes ~45°. Pec haut, charge libre.<br><strong>BLOC 2 (S5-8) — Hammer Wide Chest ISO-LATÉRALE en UNILATÉRAL :</strong> la machine à disques que tu as repérée. Un bras à la fois (ou alterné) : convergence + correction asymétrie + contraction pec complète. RE-CALIBRE en S5.',cue:'B2 : alterné G/D sans repos entre côtés. Note tout déséquilibre.',
+weeks:Wk([[1,'Incliné DB 4×6-8','CALIBRER'],[2,'Incliné DB 4×6-8 +ch',''],[3,'Incliné DB 4×6-8 +ch',''],[4,'Incliné DB 4×6 +ch','Fin B1 — bats S1'],[5,'Wide Chest UNI 4×8-10/bras','B2 — RE-CALIBRER'],[6,'Wide Chest UNI 4×8-10/bras +ch',''],[7,'Wide Chest UNI 4×8/bras +ch',''],[8,'Wide Chest UNI 4×8/bras +ch','PIC'],[9,'Incliné DB 3×8 léger','Taper']]),
 fatigue:{rx:'3×8 -15%',note:''}},
-{n:'Développé Épaules (Panatta/Haltères)',tag:'accessory',yt:Y('shoulder press machine'),tempo:'2-1-2-0',rest:'2 min',sets:4,
-howto:'Machine ou haltères. Presser 2sec, pause, descente 2sec. Deltoïde antérieur, force épaule.',cue:'Pas d\'hyperextension lombaire.',
-weeks:Wk([[1,'4×8-10','CALIBRER'],[2,'4×8-10 +charge',''],[3,'4×8-10 +charge',''],[4,'4×8 +charge',''],[5,'4×8 +charge','PIC'],[6,'3×10 -charge','Taper']]),
+{n:'Développé Épaules (B1: Panatta Deltoid / B2: Laroq convergent)',tag:'accessory',yt:Y('shoulder press machine'),tempo:'2-1-2-0',rest:'2 min',sets:4,
+howto:'<strong>BLOC 1 :</strong> Panatta Super Deltoid Press (ta réf Bridge 60kg).<br><strong>BLOC 2 :</strong> Laroq développé convergent épaules — trajectoire convergente, angle différent. RE-CALIBRE en S5.',cue:'Pas d\'hyperextension lombaire.',
+weeks:Wk([[1,'Panatta 4×8-10','Réf 60kg'],[2,'Panatta 4×8-10 +ch',''],[3,'Panatta 4×8-10 +ch',''],[4,'Panatta 4×8 +ch','Fin B1'],[5,'Laroq conv 4×8-10','B2 — RE-CALIBRER'],[6,'Laroq conv 4×8-10 +ch',''],[7,'Laroq conv 4×8 +ch',''],[8,'Laroq conv 4×8 +ch','PIC'],[9,'Panatta 3×10 léger','Taper']]),
 fatigue:{rx:'3×10 -15%',note:''}},
 {n:'Dips Lestés',tag:'accessory',yt:Y('weighted dips'),tempo:'3-1-2-0',rest:'90 sec',sets:3,
 howto:'Inclinaison avant (pec bas). Descente 3sec amplitude complète, pause 1sec. Pec bas + triceps.',cue:'Amplitude complète.',
-weeks:Wk([[1,'3×8-10','CALIBRER'],[2,'3×8-10 +charge',''],[3,'3×8-10 +charge',''],[4,'3×8 +charge',''],[5,'3×8 +charge','PIC'],[6,'3×8 BW','Taper']]),
+weeks:Wk([[1,'3×8-10','CALIBRER'],[2,'3×8-10 +charge',''],[3,'3×8-10 +charge',''],[4,'3×8 +charge','Fin B1'],[5,'3×8 +charge','B2 continue'],[6,'3×8-10 +charge',''],[7,'3×8 +charge',''],[8,'3×8 +charge','PIC'],[9,'3×8 BW','Taper']]),
 fatigue:{rx:'3×8 BW',note:''}},
-{n:'Pec Deck',tag:'accessory',yt:Y('pec deck machine'),tempo:'2-1-3-0',rest:'90 sec',sets:3,
-howto:'Isolation pec, tension constante. Contraction 1sec (serrer), ouverture LENTE 3sec → chercher l\'étirement complet. Congestion.',cue:'L\'étirement chargé = le gain. Pas de à-coups.',
-weeks:Wk([[1,'3×12-15','CALIBRER'],[2,'3×12-15 +charge',''],[3,'3×12-15 +charge',''],[4,'3×12 +charge',''],[5,'3×12 +charge','PIC'],[6,'3×15 -charge','Taper']]),
-fatigue:{rx:'2×15',note:''}},
+{n:'Isolation Pec (B1: Watson Pec Deck / B2: Watson Incline Fly disques)',tag:'accessory',yt:Y('pec deck incline fly machine'),tempo:'2-1-3-0',rest:'90 sec',sets:3,
+howto:'<strong>BLOC 1 :</strong> Watson Pec Fly (pec deck poulie). Tension constante, contraction 1s, ouverture lente 3s.<br><strong>BLOC 2 :</strong> Watson INCLINE Pec Fly (banc incliné + bras chargés aux disques) — fly incliné à came = étirement du PEC HAUT sous vraie charge. Le stimulus hypertrophie n°1. RE-CALIBRE en S5, cherche l\'étirement profond.',cue:'L\'étirement chargé = le gain. Jamais de à-coups en bas.',
+weeks:Wk([[1,'Pec Deck 3×12-15','CALIBRER'],[2,'Pec Deck 3×12-15 +ch',''],[3,'Pec Deck 3×12-15 +ch',''],[4,'Pec Deck 3×12 +ch','Fin B1'],[5,'Incline Fly 3×10-12','B2 — RE-CALIBRER'],[6,'Incline Fly 3×10-12 +ch',''],[7,'Incline Fly 3×10-12 +ch',''],[8,'Incline Fly 3×10 +ch','PIC'],[9,'Pec Deck 3×15 léger','Taper']]),
+fatigue:{rx:'2×15 léger',note:''}},
 {n:'Élévations Latérales + Triceps poulie (SS)',tag:'accessory',parts:['Élévations latérales','Extension triceps poulie'],yt:Y('lateral raise tricep pushdown'),tempo:'voir',rest:'75 sec',sets:4,
 howto:'<strong>SUPERSET.</strong> Élévations latérales (2-0-3-0, descente lente 3sec, jusqu\'à l\'horizontale) = LARGEUR d\'épaule, priorité plage. Enchaîné Extension triceps poulie (2-0-2-1) = volume triceps.',cue:'Élévations : pas au-dessus de l\'horizontale, pas de balancier.',
-weeks:Wk([[1,'4×(12-15 + 12-15)','CALIBRER'],[2,'4×(12-15+12-15) +ch',''],[3,'4×(12-15+12-15) +ch',''],[4,'4×(12+12) +ch',''],[5,'4×(12+12) +ch','PIC'],[6,'3×(15+15)','Taper']]),
+weeks:Wk([[1,'4×(12-15 + 12-15)','CALIBRER'],[2,'4×(12-15+12-15) +ch',''],[3,'4×(12-15+12-15) +ch',''],[4,'4×(12+12) +ch','Fin B1'],[5,'4×(12-15+12-15)','B2: latérales MACHINE LF + triceps CORDE poulie'],[6,'4×(12-15+12-15) +ch',''],[7,'4×(12+12) +ch',''],[8,'4×(12+12) +ch','PIC'],[9,'3×(15+15) léger','Taper']]),
 fatigue:{rx:'3×(12+12)',note:''}},
 {n:'Abdos + Mollets (rotation)',tag:'core',yt:Y('hanging leg raise hollow hold'),tempo:'Contrôlé',rest:'45-60 sec',sets:0,
 howto:'<strong>Rotation 3 stations :</strong><br><strong>Hanging Leg Raises:</strong> suspendu, monter jambes par flexion hanche, pas de balancier. Abdos bas.<br><strong>Hollow Body Hold:</strong> allongé, bas du dos plaqué, bras+jambes tendus décollés. Gainage anti-extension, densité du grand droit.<br><strong>Standing Calf Raise:</strong> amplitude COMPLÈTE, étirement max en bas tenu 2-3sec, contraction haute. Mollet (1/3 fréquence semaine).',cue:'Mini-dose abdos lundi (gros bloc = vendredi).',
-weeks:Wk([[1,'Leg Raises 3×10-12 + Hollow 3×20-30s + Calf 4×15-20','CALIBRER'],[2,'idem','+étirement calf'],[3,'Leg Raises 3×12 + Hollow 3×30s + Calf 4×18','+charge calf'],[4,'idem','+charge'],[5,'Leg Raises 3×12 lestées + Hollow 3×35s + Calf 4×20','PIC'],[6,'Leg Raises 2×10 + Calf 3×15','Taper']]),
+weeks:Wk([[1,'Leg Raises 3×10-12 + Hollow 3×20-30s + Calf 4×15-20','CALIBRER'],[2,'idem','+étirement calf'],[3,'Leg Raises 3×12 + Hollow 3×30s + Calf 4×18','+charge'],[4,'idem +charge','Fin B1'],[5,'Leg Raises 3×12 jambes tendues + Hollow 3×30s + Calf 4×18','B2'],[6,'idem +charge',''],[7,'Leg Raises lestées 3×10 + Hollow 3×35s + Calf 4×20',''],[8,'Leg Raises lestées 3×12 + Hollow 3×40s + Calf 4×20','PIC'],[9,'Leg Raises 2×10 + Calf 3×15','Taper']]),
 fatigue:{rx:'Leg Raises 2×10 + Calf 3×15',note:''}},
 {n:'WOD — PUMP & BURN (haut + brûle)',tag:'wod',yt:Y('ski erg devil press'),tempo:'',rest:'',sets:0,
 howto:'<strong>CIBLE : congestion haut du corps + capacité lactique + dépense. Dominante haut → épargne les jambes pour le tempo de demain.</strong><br>Devil Press = burpee + double snatch haltères. Ski Erg = tirage haut du corps, zéro impact jambes.<br>▶ <a href="'+Y('devil press dumbbell')+'" target="_blank">Devil Press</a> · <a href="'+Y('ski erg form')+'" target="_blank">Ski Erg</a>',
 cue:'Chaque semaine un WOD différent, même cible. Note ton score.',
-weeks:Wk([[1,'AMRAP 14min: 12cal Ski + 8 Devil Press@2×15 + 12 Push-ups','SCORE = tours. Réf'],[2,'EMOM 15min: min1 10 Devil Press / min2 15cal Ski / min3 15 Push-ups','Réf EMOM'],[3,'AMRAP 14min: 10 DB Snatch@22.5/c + 12cal Ski + 10 Dips','Densif'],[4,'5 rounds For Time: 12 Devil Press@2×15 + 15cal Ski + 20 Push-ups','Chrono'],[5,'AMRAP 16min: 8 Devil Press@2×17.5 + 14cal Ski + 12 Push-ups + 10 Dips','PIC'],[6,'AMRAP 10min: 8 Devil Press@2×15 + 12cal Ski + 10 Push-ups','Taper léger']]),
+weeks:Wk([[1,'AMRAP 14min: 12cal Ski + 8 Devil Press@2×15 + 12 Push-ups','B1 — SCORE réf'],[2,'EMOM 15min: min1 10 Devil Press / min2 15cal Ski / min3 15 Push-ups','B1'],[3,'AMRAP 14min: 10 DB Snatch@22.5/c + 12cal Ski + 10 Dips','B1'],[4,'5 rounds For Time: 12 Devil Press@2×15 + 15cal Ski + 20 Push-ups','B1 — chrono'],[5,'21-15-9 For Time: cal Ski + Devil Press@2×15 + Push-ups release','B2 — nouveau'],[6,'EMOM 16min: min1 12 DB Snatch alterné@22.5 / min2 14cal Ski / min3 8 Plyo Push-ups / min4 repos','B2'],[7,'AMRAP 15min: 6 Devil Press@2×17.5 + 10cal Ski + 8 Dips + 10 Push-ups','B2'],[8,'3 rounds For Time: 21cal Ski + 15 Devil Press@2×15 + 21 Push-ups','B2 — PIC chrono'],[9,'AMRAP 10min: 8 Devil Press@2×15 + 12cal Ski + 10 Push-ups','Taper']]),
 fatigue:{rx:'AMRAP 8min même mvts, allégé',note:''}}]},
 
-{day:2,nm:'RUN — TEMPO / SEUIL',wu:'TEMPO',type:'run',dur:['~50','~52','~52','~55','~58','~45'],ex:[
+{day:2,nm:'RUN — TEMPO / SEUIL',wu:'TEMPO',type:'run',dur:['~50','~52','~52','~55','~55','~58','~58','~60','~45'],ex:[
 {n:'Tempo / Seuil',tag:'cardio',yt:Y('tempo run threshold'),tempo:'',rest:'',sets:0,
 howto:'<strong>CIBLE : seuil lactique = l\'allure que tu tiens longtemps = facteur n°1 sur 10km.</strong><br>Allure 4\'15-4\'30/km, FC ~165-175 ("comfortably hard" : tu peux dire 3-4 mots, pas une phrase).<br>Le passage fractionné (2×) → continu (S3+) fait monter le seuil.',cue:'Glucides relevés la veille + avant (séance intense en déficit).',
-weeks:Wk([[1,'2×10min @4:25 · récup 3min trot','Réf seuil'],[2,'2×12min @4:20 · récup 3min',''],[3,'20min continu @4:20','Continu'],[4,'25min continu @4:15',''],[5,'30min continu @4:15','PIC'],[6,'2×10min @4:20','Taper']]),
+weeks:Wk([[1,'2×10min @4:25 · récup 3min trot','Réf seuil'],[2,'2×12min @4:20 · récup 3min',''],[3,'20min continu @4:20','Continu'],[4,'22min continu @4:20',''],[5,'25min continu @4:15',''],[6,'28min continu @4:15',''],[7,'30min continu @4:15',''],[8,'30min continu @4:10-4:15','PIC'],[9,'2×10min @4:20','Taper']]),
 fatigue:{rx:'Convertir en Z2 30-40min si jambes vides',note:''}}]},
 
-{day:3,nm:'PULL — DOS/BICEPS/DELT POST + GRIP DÉDIÉ',wu:'PULL',type:'gym',dur:['~90','~92','~95','~95','~100','~78'],ex:[
+{day:3,nm:'PULL — DOS/BICEPS/DELT POST + GRIP DÉDIÉ',wu:'PULL',type:'gym',dur:['~90','~92','~95','~95','~92','~95','~98','~100','~78'],ex:[
 {n:'Tractions Lestées',tag:'pillar',yt:Y('weighted pull ups'),tempo:'3-1-2-0',rest:'2-3 min',sets:4,
 howto:'Ceinture/gilet. Dépression scapulaire, poitrine vers barre, menton au-dessus. Descente 3sec, amplitude COMPLÈTE. La largeur dorsale = base du V plage. La sèche va alléger ton poids → tractions plus faciles, profites-en.',cue:'Pas de kipping. Reine du dos, faite fraîche.',
-weeks:Wk([[1,'4×5-6','CALIBRER'],[2,'4×5-6 +charge',''],[3,'4×5-6 +charge',''],[4,'4×5 +charge',''],[5,'4×5 +charge','PIC'],[6,'3×5 -charge','Taper']]),
+weeks:Wk([[1,'4×5-6','CALIBRER (réf +35kg)'],[2,'4×5-6 +charge',''],[3,'4×5-6 +charge',''],[4,'4×5 +charge','Fin B1'],[5,'4×5-6 +charge','B2 — moteur continue'],[6,'4×5-6 +charge',''],[7,'4×5 +charge',''],[8,'4×5 +charge','PIC'],[9,'3×5 -charge','Taper']]),
 fatigue:{rx:'4×max BW',note:''}},
-{n:'Panatta Super High Row — UNILATÉRAL',tag:'accessory',yt:Y('panatta high row machine'),tempo:'2-1-2-0',rest:'90 sec',sets:4,
-howto:'<strong>UN BRAS à la fois.</strong> Angle haut = lats supérieurs + rhomboïdes. Support pec = zéro triche lombaire. Unilatéral = correction asymétrie + amplitude max. Alterner G/D sans repos entre les côtés (gain de temps).',cue:'Note tout déséquilibre G/D. Étirement complet en avant.',
-weeks:Wk([[1,'3-4×8-10/bras','CALIBRER G/D'],[2,'4×8-10/bras +charge',''],[3,'4×8-10/bras +charge',''],[4,'4×8/bras +charge',''],[5,'4×8/bras +charge','PIC'],[6,'3×10/bras','Taper']]),
-fatigue:{rx:'3×10/bras -15%',note:''}},
-{n:'Panatta Super Low Row — UNILATÉRAL',tag:'accessory',yt:Y('panatta low row machine'),tempo:'2-1-2-0',rest:'90 sec',sets:3,
-howto:'<strong>UN BRAS.</strong> Angle bas = épaisseur milieu/bas du dos. Complète le High Row sur un autre vecteur. Unilatéral, alterné sans repos entre côtés.',cue:'Tire avec le coude, pas la main.',
-weeks:Wk([[1,'3×10-12/bras','CALIBRER'],[2,'3×10-12/bras +ch',''],[3,'3×10-12/bras +ch',''],[4,'3×10/bras +ch',''],[5,'3×10/bras +ch','PIC'],[6,'3×12/bras','Taper']]),
-fatigue:{rx:'2×12/bras',note:''}},
-{n:'Pull-Over (machine/poulie)',tag:'accessory',yt:Y('cable pullover lats'),tempo:'2-1-3-0',rest:'90 sec',sets:3,
-howto:'Bras quasi tendus. Tirer par extension d\'épaule, étirement lats en haut, contraction en bas. ZÉRO biceps, zéro grip. Isolation lats = largeur.',cue:'Bras tendus, ressentir les lats.',
-weeks:Wk([[1,'3×12-15','CALIBRER'],[2,'3×12-15 +ch',''],[3,'3×12 +ch',''],[4,'3×12 +ch',''],[5,'3×12 +ch','PIC'],[6,'3×15','Taper']]),
+{n:'Épaisseur Dos 1 (B1: Super High Row UNI / B2: Watson T-Bar)',tag:'accessory',yt:Y('panatta high row t-bar row chest supported'),tempo:'2-1-2-0',rest:'2 min',sets:4,
+howto:'<strong>BLOC 1 :</strong> Panatta Super High Row UNILATÉRAL — un bras, lats supérieurs + rhomboïdes, alterné G/D sans repos.<br><strong>BLOC 2 :</strong> Watson T-Bar chest supported — BILATÉRAL LOURD, appui pectoral = zéro lombaire. L\'épaisseur pure. RE-CALIBRE en S5.',cue:'B1 : note les asymétries. B2 : tire avec les coudes, charge plus lourde possible.',
+weeks:Wk([[1,'High Row 4×8-10/bras','CALIBRER G/D'],[2,'High Row 4×8-10/bras +ch',''],[3,'High Row 4×8-10/bras +ch',''],[4,'High Row 4×8/bras +ch','Fin B1'],[5,'T-Bar 4×8-10','B2 — RE-CALIBRER'],[6,'T-Bar 4×8-10 +ch',''],[7,'T-Bar 4×8 +ch',''],[8,'T-Bar 4×8 +ch','PIC'],[9,'High Row 3×10/bras léger','Taper']]),
+fatigue:{rx:'3×10 -15%',note:''}},
+{n:'Tirage Dos 2 (B1: Super Low Row UNI / B2: Laroq verticaux+horizontaux convergents)',tag:'accessory',yt:Y('low row machine lat pulldown converging'),tempo:'2-1-2-0',rest:'90 sec',sets:3,
+howto:'<strong>BLOC 1 :</strong> Panatta Super Low Row UNILATÉRAL — milieu/bas du dos, un bras.<br><strong>BLOC 2 :</strong> Delavier-Laroq TIRAGE VERTICAL convergent 3×10-12 (largeur, angle convergent ≠ tractions) — en alternance une semaine sur deux avec le TIRAGE HORIZONTAL convergent (milieu de dos). RE-CALIBRE en S5.',cue:'Tire avec le coude. B2 : la convergence donne une contraction finale que les poulies droites n\'ont pas — cherche-la.',
+weeks:Wk([[1,'Low Row 3×10-12/bras','CALIBRER'],[2,'Low Row 3×10-12/bras +ch',''],[3,'Low Row 3×10-12/bras +ch',''],[4,'Low Row 3×10/bras +ch','Fin B1'],[5,'Laroq vertical conv 3×10-12','B2 — RE-CALIBRER'],[6,'Laroq horizontal conv 3×10-12','Alternance'],[7,'Laroq vertical conv 3×10 +ch',''],[8,'Laroq horizontal conv 3×10 +ch','PIC'],[9,'Low Row 3×12/bras léger','Taper']]),
+fatigue:{rx:'2×12 léger',note:''}},
+{n:'Pullover Technogym Iso-Tonic',tag:'accessory',yt:Y('pullover machine lats'),tempo:'2-1-3-0',rest:'90 sec',sets:3,
+howto:'<strong>La machine pullover à came — une rareté, on la garde sur les DEUX blocs (pas de meilleur outil).</strong> Bras quasi tendus, extension d\'épaule, étirement lats max en haut, contraction en bas. ZÉRO biceps, zéro grip. Isolation lats = largeur.',cue:'Le seul exo dos identique sur les 2 blocs avec les tractions. Progression continue.',
+weeks:Wk([[1,'3×12-15','CALIBRER'],[2,'3×12-15 +ch',''],[3,'3×12 +ch',''],[4,'3×12 +ch','Fin B1'],[5,'3×12-15 +ch','B2 continue'],[6,'3×12 +ch',''],[7,'3×12 +ch',''],[8,'3×12 +ch','PIC'],[9,'3×15 léger','Taper']]),
 fatigue:{rx:'2×15',note:''}},
-{n:'Curl Incliné + Reverse Pec Deck (SS)',tag:'accessory',parts:['Curl incliné haltères','Reverse Pec Deck'],yt:Y('incline dumbbell curl reverse pec deck'),tempo:'voir',rest:'75 sec',sets:4,
-howto:'<strong>SUPERSET.</strong> Curl incliné haltères (3-0-2-1) = biceps en position étirée (chef long = volume). Enchaîné Reverse Pec Deck (2-1-2-1) = deltoïde POSTÉRIEUR (épaule 3D vue de profil, plage).',cue:'Curl : coudes fixes en arrière (incliné). Reverse : serrer les omoplates.',
-weeks:Wk([[1,'4×(10-12 + 15)','CALIBRER'],[2,'4×(10-12+15) +ch',''],[3,'4×(10-12+15) +ch',''],[4,'4×(10+15) +ch',''],[5,'4×(10+15) +ch','PIC'],[6,'3×(12+15)','Taper']]),
-fatigue:{rx:'3×(10+15)',note:''}},
+{n:'Biceps + Delt Post (SS) (B1: Curl incliné / B2: Preacher Laroq)',tag:'accessory',parts:['Curl (incliné B1 / preacher Laroq B2)','Reverse Fly (Watson pec deck inversé)'],yt:Y('incline curl preacher curl reverse fly'),tempo:'voir',rest:'75 sec',sets:4,
+howto:'<strong>SUPERSET.</strong><br><strong>BLOC 1 :</strong> Curl incliné haltères (3-0-2-1) = biceps étiré (chef long).<br><strong>BLOC 2 :</strong> Preacher curl LAROQ à disques (2-0-3-1) = came + appui huméral = isolation totale, étirement bas contrôlé. RE-CALIBRE en S5.<br><strong>Les 2 blocs :</strong> enchaîné Reverse Fly sur le Watson pec deck inversé (2-1-2-1) = deltoïde POSTÉRIEUR (épaule 3D).',cue:'B2 preacher : ne tends jamais brutalement en bas, la came charge fort l\'étirement.',
+weeks:Wk([[1,'Curl incl 4×10-12 + RevFly 4×15','CALIBRER'],[2,'4×(10-12+15) +ch',''],[3,'4×(10-12+15) +ch',''],[4,'4×(10+15) +ch','Fin B1'],[5,'Preacher Laroq 4×10-12 + RevFly 4×15','B2 — RE-CALIBRER'],[6,'4×(10-12+15) +ch',''],[7,'4×(10+15) +ch',''],[8,'4×(10+15) +ch','PIC'],[9,'Curl incl 3×12 + RevFly 3×15 léger','Taper']]),
+fatigue:{rx:'3×(10+15) léger',note:''}},
 {n:'Curl Marteau + Seated Calf (SS)',tag:'accessory',parts:['Curl marteau','Seated Calf'],yt:Y('hammer curl seated calf raise'),tempo:'voir',rest:'60 sec',sets:3,
 howto:'<strong>SUPERSET.</strong> Curl marteau (2-0-2-0) = brachial + avant-bras (épaisseur bras). Enchaîné Seated Calf (2-2-3-0) = soléaire (mollet genou plié, portion différente du standing — épaisseur). Mollet 2/3 fréquence semaine.',cue:'Marteau : prise neutre. Calf : amplitude complète, étirement bas.',
-weeks:Wk([[1,'3×(10-12 + 15-20)','CALIBRER'],[2,'3×(10-12+15-20) +ch',''],[3,'3×(10-12+15-20) +ch',''],[4,'3×(12+18) +ch',''],[5,'3×(12+18) +ch','PIC'],[6,'3×(12+15)','Taper']]),
+weeks:Wk([[1,'3×(10-12 + 15-20)','CALIBRER'],[2,'3×(10-12+15-20) +ch',''],[3,'3×(10-12+15-20) +ch',''],[4,'3×(12+18) +ch','Fin B1'],[5,'3×(10-12+15-20)','B2: marteau POULIE corde + calf assis Watson'],[6,'3×(10-12+15-20) +ch',''],[7,'3×(12+18) +ch',''],[8,'3×(12+18) +ch','PIC'],[9,'3×(12+15) léger','Taper']]),
 fatigue:{rx:'2×(12+15)',note:''}},
 {n:'GRIP DÉDIÉ (séparé du WOD)',tag:'grip',yt:Y('grip strength farmer hold dead hang'),tempo:'',rest:'60-90 sec',sets:0,
 howto:'<strong>CIRCUIT ~8-10min, après la muscu. Développe les 3 types de grip : support + crush + pinch.</strong><br><strong>Barre strongman:</strong> chargée, tenue max time.<br><strong>Dead Hang:</strong> dispo partout, prise pronation, épaules actives.<br><strong>DB hold tête hexagonale:</strong> tenir l\'haltère par la tête (prise large) = support dur.<br><strong>Pinch plate / Plate flip:</strong> disques lisses pincés pouce-doigts = pince (qualité neuve).<br><strong>Towel dead hang:</strong> serviette sur barre = crush.<br><strong>Corde:</strong> montées + descente lente (étage).<br>▶ <a href="'+Y('pinch plate grip')+'" target="_blank">Pinch</a> · <a href="'+Y('rope climb')+'" target="_blank">Corde</a> · <a href="'+Y('farmer hold strongman bar')+'" target="_blank">Barre</a>',
 cue:'⚠️ Garde-fou peau : si main à vif (callosité), bascule sur pinch/DB hold/barre (non abrasifs), saute corde+towel cette semaine.',
-weeks:Wk([[1,'Barre strongman tenue max 3× + Dead Hang 3×max','NOTER TEMPS'],[2,'DB hold tête hexa 3×max/main + Pinch plate 3×30s','Pinch neuf'],[3,'Farmer carry barre strongman 3×30m + Rope climb 3 montées','Corde'],[4,'Barre strongman tenue 3× + Towel dead hang 2×max','Allègement peau'],[5,'Farmer carry lourd 4×25m + Rope climb 3-4 + Plate flip 3×8','PIC'],[6,'Dead hang lesté 2×max + Pinch plate 2×max','Taper']]),
+weeks:Wk([[1,'Barre strongman tenue max 3× + Dead Hang 3×max','NOTER TEMPS'],[2,'DB hold tête hexa 3×max/main + Pinch plate 3×30s','Pinch neuf'],[3,'Farmer carry barre strongman 3×30m + Rope climb 3 montées','Corde'],[4,'Barre strongman tenue 3× + Towel dead hang 2×max','Fin B1'],[5,'Pinch plate 3×max + Plate flip 3×8 + Dead Hang 2×max','B2 — pinch focus'],[6,'Farmer carry 3×30m + DB hold hexa 3×max/main',''],[7,'Rope climb 3-4 + Towel dead hang 2×max + Pinch 2×30s','Mixte'],[8,'Farmer lourd 4×25m + Rope climb 3-4 + Plate flip 3×8','PIC'],[9,'Dead hang 2×max + Pinch léger','Taper']]),
 fatigue:{rx:'Dead hang 2×max + DB hold 2×max/main',note:''}},
 {n:'WOD — ENDURANCE TRACTIONS + CARDIO',tag:'wod',yt:Y('pull up cardio wod'),tempo:'',rest:'',sets:0,
 howto:'<strong>CIBLE : endurance de tractions (≠ force) + cardio. Le cardio non-grip entre les séries laisse récupérer les avant-bras (grip déjà servi par le bloc dédié).</strong><br>Petites séries de pull-ups répétées (pas à l\'échec) + cardio (assault bike, ski, burpees, box).<br>▶ <a href="'+Y('kipping vs strict pull up endurance')+'" target="_blank">Pull-Up endurance</a>',
 cue:'Si avant-bras/peau saturent : réduis le volume pull-ups cette semaine. WOD différent chaque semaine.',
-weeks:Wk([[1,'EMOM 15min: min1 6-8 Pull-ups / min2 12-15cal Bike / min3 10 Burpees','Réf'],[2,'AMRAP 14min: 5 Pull-ups + 12cal Ski + 15 Air Squats','Réf AMRAP'],[3,'For Time 10-8-6-4-2 Pull-ups + 10cal Bike entre chaque','Densif'],[4,'EMOM 16min: min1 8 Pull-ups / min2 15cal Ski / min3 12 KB Swing@24 / min4 repos','+volume'],[5,'AMRAP 16min: 6 Pull-ups + 10 Box Jump + 14cal Bike','PIC'],[6,'EMOM 12min: min1 5 Pull-ups / min2 12cal Bike','Taper']]),
+weeks:Wk([[1,'EMOM 15min: min1 6-8 Pull-ups / min2 12-15cal Bike / min3 10 Burpees','B1 — réf'],[2,'AMRAP 14min: 5 Pull-ups + 12cal Ski + 15 Air Squats','B1'],[3,'For Time 10-8-6-4-2 Pull-ups + 10cal Bike entre chaque','B1'],[4,'EMOM 16min: min1 8 Pull-ups / min2 15cal Ski / min3 12 KB Swing@24 / min4 repos','B1 — fin bloc'],[5,'AMRAP 14min: 4 Pull-ups + 8 Burpees + 12cal Bike Erg','B2 — nouveau'],[6,'For Time 15-12-9-6-3 Pull-ups + 12cal Ski entre chaque','B2 — volume PU'],[7,'EMOM 18min: min1 7 Pull-ups / min2 14cal Bike / min3 10 Burpee Box Step-Over / min4 repos','B2'],[8,'AMRAP 16min: 6 Pull-ups + 10 Box Jump + 14cal Bike','B2 — PIC'],[9,'EMOM 12min: min1 5 Pull-ups / min2 12cal Bike','Taper']]),
 fatigue:{rx:'EMOM 10min: 4 Pull-ups / 12cal bike',note:''}}]},
 
-{day:4,nm:'RUN — INTERVALLES VMA',wu:'VMA',type:'run',dur:['~52','~52','~55','~58','~55','~48'],ex:[
+{day:4,nm:'RUN — INTERVALLES VMA',wu:'VMA',type:'run',dur:['~52','~52','~55','~58','~58','~58','~60','~58','~48'],ex:[
 {n:'Intervalles VMA',tag:'cardio',yt:Y('VMA interval running'),tempo:'',rest:'',sets:0,
 howto:'<strong>CIBLE : VO2max + vitesse pure + économie de course. Le run qui te rend rapide.</strong><br>Allure VMA ~3\'55-4\'10/km. 400m = vitesse/VO2max, 800-1000m = tenue de l\'allure rapide (spécifique 10km). On alterne.<br>FC pic proche max (181-201). Récup trot complète entre.',cue:'Échauffement VMA obligatoire (15min + lignes droites). Glucides avant.',
-weeks:Wk([[1,'6×400m @3:55-4:00 · r1\'30 trot','Réf VMA'],[2,'5×800m @4:05-4:10 · r2min',''],[3,'8×400m @3:55 · r1\'30',''],[4,'5×1000m @4:10 · r2\'30',''],[5,'6×800m @4:00 · r2min','PIC'],[6,'4×400m @VMA · r1\'30','Taper']]),
+weeks:Wk([[1,'6×400m @3:55-4:00 · r1\'30 trot','Réf VMA'],[2,'5×800m @4:05-4:10 · r2min',''],[3,'8×400m @3:55 · r1\'30',''],[4,'5×1000m @4:10 · r2\'30',''],[5,'10×400m @3:55 · r1\'15','Volume court'],[6,'6×800m @4:00-4:05 · r2min',''],[7,'4×1200m @4:10 · r2\'30','Spécifique 10k'],[8,'6×800m @4:00 · r1\'45','PIC'],[9,'4×400m @VMA · r1\'30','Taper']]),
 fatigue:{rx:'Réduire à 4 reps OU convertir Z2 si jambes vides',note:''}}]},
 
-{day:5,nm:'FULL — EXPLO BAS + JAMBES + RAPPEL HAUT + BRAS + ABDOS',wu:'FULL',type:'gym',dur:['~100','~102','~105','~105','~108','~85'],ex:[
+{day:5,nm:'FULL — EXPLO BAS + JAMBES + RAPPEL HAUT + BRAS + ABDOS',wu:'FULL',type:'gym',dur:['~100','~102','~105','~105','~102','~105','~108','~110','~85'],ex:[
 {n:'Explosivité Bas (Sauts)',tag:'explosive',yt:Y('box jump broad jump depth jump'),tempo:'Maximal',rest:'1m30-2m',sets:0,
 howto:'<strong>EN OUVERTURE, SNC frais. Suite directe du Bridge — qualité prioritaire à maintenir (Broad Jump 2.95m).</strong><br><strong>Box Jump:</strong> exploser haut, atterrir doux.<br><strong>Broad Jump:</strong> exploser AVANT, distance max, NOTER.<br><strong>Depth Jump:</strong> tomber de box 40-60cm, rebondir immédiat (contact <0.25s).<br><strong>SL variations:</strong> 1 jambe, noter asymétrie.<br>▶ <a href="'+Y('depth jump plyometric')+'" target="_blank">Depth Jump</a> · <a href="'+Y('broad jump distance')+'" target="_blank">Broad Jump</a>',
 cue:'Récup COMPLÈTE. Mesure hauteur/distance. Cible : ne pas descendre sous 2.90m au Broad Jump.',
-weeks:Wk([[1,'Box Jump 3×3 + Broad Jump 3×3','NOTER haut+dist'],[2,'Depth Jump 3×3 + Broad Jump 3×3','Mesure'],[3,'Depth Jump 3×4 + SL Box Jump 3×3/j','Asymétrie'],[4,'Reactive Hops 3×5 + Broad Jump 3×3','Réactif'],[5,'TEST Broad Jump max + Depth Jump 3×3','PIC — bats 2.95m'],[6,'Box Jump 2×3 léger','Taper']]),
+weeks:Wk([[1,'Box Jump 3×3 + Broad Jump 3×3','NOTER haut+dist'],[2,'Depth Jump 3×3 + Broad Jump 3×3','Mesure'],[3,'Depth Jump 3×4 + SL Box Jump 3×3/j','Asymétrie'],[4,'Reactive Hops 3×5 + Broad Jump 3×3','Fin B1'],[5,'TEST 1 Broad Jump max + Depth Jump 3×3','Checkpoint mi-bloc'],[6,'Depth Jump 3×4 + SL Box Jump 3×3/j','B2'],[7,'Reactive Hops 4×5 + Broad Jump 3×3',''],[8,'TEST 2 Broad Jump max + Depth Jump 3×3','PIC — bats 2.95m'],[9,'Box Jump 2×3 léger','Taper']]),
 fatigue:{rx:'SKIP ou Box Jump 2×3 léger',note:''}},
-{n:'Pendulum Squat',tag:'legs',yt:Y('pendulum squat'),tempo:'3-1-2-0',rest:'2 min',sets:3,
-howto:'Quad, volume, étirement profond. Pause 1sec en bas. ZÉRO stress lombaire (remplace le squat barre — pattern barre repris à l\'automne). Charge MAINTIEN, pas de PR (protéger les runs).',cue:'Amplitude complète, contrôlé.',
-weeks:Wk([[1,'3×8-10','CALIBRER'],[2,'3×8-10 +charge',''],[3,'3×8-10 +charge',''],[4,'3×8-10',''],[5,'3×8-10','PIC'],[6,'3×10 léger','Taper']]),
+{n:'Quad Machine (B1: Pendulum / B2: Watson Hack Squat 30°)',tag:'legs',yt:Y('pendulum squat hack squat'),tempo:'3-1-2-0',rest:'2 min',sets:3,
+howto:'<strong>BLOC 1 :</strong> Predator Pendulum — ta machine du Bridge.<br><strong>BLOC 2 :</strong> Watson Hack Squat 30° — même rôle (quad profond, zéro lombaire), trajectoire différente. RE-CALIBRE en S5.<br>Charge MAINTIEN, pas de PR (protéger les runs). Pause 1s en bas.',cue:'Amplitude complète, contrôlé.',
+weeks:Wk([[1,'Pendulum 3×8-10','CALIBRER'],[2,'Pendulum 3×8-10 +ch',''],[3,'Pendulum 3×8-10 +ch',''],[4,'Pendulum 3×8-10','Fin B1'],[5,'Hack Squat 3×8-10','B2 — RE-CALIBRER'],[6,'Hack Squat 3×8-10 +ch',''],[7,'Hack Squat 3×8-10',''],[8,'Hack Squat 3×8-10','PIC'],[9,'Pendulum 3×10 léger','Taper']]),
 fatigue:{rx:'3×10 -15%',note:''}},
 {n:'Hip Thrust',tag:'legs',yt:Y('hip thrust'),tempo:'2-2-2-0',rest:'2 min',sets:3,
 howto:'Dos calé sur banc. Hanches haut, PAUSE 2sec, serrer fessiers. Menton rentré. Fessier = esthétique profil (équilibre jambes fines) + moteur course/explosivité.',cue:'Pas d\'hyperextension lombaire.',
-weeks:Wk([[1,'3×8-10','CALIBRER'],[2,'3×8-10 +charge',''],[3,'3×8-10 +charge',''],[4,'3×8 +charge',''],[5,'3×8 +charge','PIC'],[6,'3×10 léger','Taper']]),
+weeks:Wk([[1,'3×8-10','CALIBRER'],[2,'3×8-10 +charge',''],[3,'3×8-10 +charge',''],[4,'3×8 +charge','Fin B1'],[5,'3×8-10 +charge','B2 — moteur continue'],[6,'3×8-10 +charge',''],[7,'3×8 +charge',''],[8,'3×8 +charge','PIC'],[9,'3×10 léger','Taper']]),
 fatigue:{rx:'3×10 -15%',note:''}},
-{n:'Bulgarian Split Squat (haltères)',tag:'legs',yt:Y('bulgarian split squat dumbbell'),tempo:'2-1-2-0',rest:'90 sec',sets:3,
-howto:'<strong>UNILATÉRAL roi.</strong> Pied arrière sur banc. Descente contrôlée, genou avant. Quad + fessier + stabilité. Corrige tes ASYMÉTRIES. Charge modérée (pas de PR, protéger runs).',cue:'Note la différence G/D. Buste légèrement penché = plus fessier.',
-weeks:Wk([[1,'3×8-10/jambe','CALIBRER G/D'],[2,'3×8-10/j +charge',''],[3,'3×8-10/j +charge',''],[4,'3×8/j +charge',''],[5,'3×8/j +charge','PIC'],[6,'3×10/j léger','Taper']]),
+{n:'Unilatéral Jambes (B1: Bulgarian / B2: Fentes marchées)',tag:'legs',yt:Y('bulgarian split squat walking lunges'),tempo:'2-1-2-0',rest:'90 sec',sets:3,
+howto:'<strong>BLOC 1 :</strong> Bulgarian split squat haltères (rouleau dédié), pied arrière surélevé. Quad+fessier+stabilité.<br><strong>BLOC 2 :</strong> Fentes marchées haltères — même cible, plus dynamique, gros transfert course. Pas trop lourdes (maintien).',cue:'Note les asymétries G/D. Buste légèrement penché = plus fessier.',
+weeks:Wk([[1,'Bulgarian 3×8-10/j','CALIBRER G/D'],[2,'Bulgarian 3×8-10/j +ch',''],[3,'Bulgarian 3×8-10/j +ch',''],[4,'Bulgarian 3×8/j','Fin B1'],[5,'Fentes marchées 3×10/j','B2 — RE-CALIBRER'],[6,'Fentes marchées 3×10/j +ch',''],[7,'Fentes marchées 3×10/j',''],[8,'Fentes marchées 3×10/j','PIC'],[9,'Bulgarian 2×10/j PDC','Taper']]),
 fatigue:{rx:'2×10/j PDC',note:''}},
-{n:'Leg Curl unilatéral',tag:'legs',yt:Y('single leg curl'),tempo:'2-1-3-0',rest:'90 sec',sets:3,
-howto:'<strong>UNILATÉRAL.</strong> Une jambe. Ischios. Étirement contrôlé 3sec. Corrige asymétrie + santé genou (équilibre quad/ischio).',cue:'Hanches collées au banc, pas de décollage.',
-weeks:Wk([[1,'3×10-12/jambe','CALIBRER'],[2,'3×10-12/j +ch',''],[3,'3×10-12/j +ch',''],[4,'3×10/j +ch',''],[5,'3×10/j +ch','PIC'],[6,'3×12/j','Taper']]),
-fatigue:{rx:'2×12/j',note:''}},
+{n:'Ischios (B1: MTS Leg Curl debout UNI / B2: Leg Curl assis LF + Reverse Hyper)',tag:'legs',yt:Y('standing leg curl seated leg curl reverse hyper'),tempo:'2-1-3-0',rest:'90 sec',sets:3,
+howto:'<strong>BLOC 1 :</strong> Hammer MTS leg curl DEBOUT — unilatéral par nature, asymétries.<br><strong>BLOC 2 :</strong> Leg curl ASSIS Life Fitness (position assise = ischio plus étiré = stimulus supérieur) + 2×15 Reverse Hyper Rogue LÉGER en bonus (chaîne postérieure + décompression lombaire, ton dos de cordiste appréciera).',cue:'B2 assis : étirement complet, 3s de descente.',
+weeks:Wk([[1,'MTS debout 3×10-12/j','CALIBRER'],[2,'MTS debout 3×10-12/j +ch',''],[3,'MTS debout 3×10-12/j +ch',''],[4,'MTS debout 3×10/j','Fin B1'],[5,'Curl assis 3×10-12 + RevHyper 2×15 léger','B2 — RE-CALIBRER'],[6,'Curl assis 3×10-12 +ch + RevHyper 2×15',''],[7,'Curl assis 3×10 +ch + RevHyper 2×15',''],[8,'Curl assis 3×10 +ch + RevHyper 2×15','PIC'],[9,'Curl assis 2×12 léger','Taper']]),
+fatigue:{rx:'2×12 léger',note:''}},
 {n:'Leg Extension',tag:'legs',yt:Y('leg extension'),tempo:'2-1-2-1',rest:'75 sec',sets:3,
 howto:'Finition quad, congestion. Extension complète, contraction 1sec, descente 2sec. <em>1er exo à alléger si fatigue trop forte.</em>',cue:'Reps hautes, congestion.',
-weeks:Wk([[1,'3×12-15','CALIBRER'],[2,'3×12-15 +ch',''],[3,'3×12-15 +ch',''],[4,'3×12 +ch',''],[5,'3×12 +ch','PIC'],[6,'3×15','Taper']]),
+weeks:Wk([[1,'Cybex 3×12-15','CALIBRER'],[2,'Cybex 3×12-15 +ch',''],[3,'Cybex 3×12-15 +ch',''],[4,'Cybex 3×12 +ch','Fin B1'],[5,'LF 3×12-15','B2 — autre machine'],[6,'LF 3×12-15 +ch',''],[7,'LF 3×12 +ch',''],[8,'LF 3×12 +ch','PIC'],[9,'3×15 léger','Taper']]),
 fatigue:{rx:'SKIP si pressé',note:''}},
 {n:'Rappel Haut : Incliné machine + High Row',tag:'accessory',parts:['Développé incliné machine','High Row / tirage vertical'],yt:Y('incline machine press high row'),tempo:'2-1-2-0',rest:'90 sec',sets:3,
 howto:'<strong>2e dose pec + dos de la semaine (fréquence).</strong> Développé incliné machine 3×8-10 (pec haut) PUIS High Row ou tirage vertical 3×10-12 (dos). Machines = peu fatigant en fin de semaine. <em>Secondaire : à alléger si temps/fatigue.</em>',cue:'Rappel, pas de PR. Qualité.',
-weeks:Wk([[1,'Inc 3×8-10 + Row 3×10-12','CALIBRER'],[2,'+charge',''],[3,'+charge',''],[4,'+charge',''],[5,'+charge','PIC'],[6,'allégé','Taper']]),
+weeks:Wk([[1,'Laroq incliné conv 3×8-10 + LF tirage vert 3×10-12','CALIBRER'],[2,'+charge',''],[3,'+charge',''],[4,'+charge','Fin B1'],[5,'Delavier horizontal conv 3×8-10 + Hammer MTS tirage 3×10-12','B2 — RE-CALIBRER'],[6,'+charge',''],[7,'+charge',''],[8,'+charge','PIC'],[9,'allégé 2×10 chaque','Taper']]),
 fatigue:{rx:'2×10 chaque, léger',note:''}},
 {n:'Bras Focus : Curl + Triceps + Marteau (SS)',tag:'accessory',parts:['Curl barre EZ/haltères','Extension triceps overhead','Curl marteau','Standing Calf'],yt:Y('biceps triceps superset'),tempo:'voir',rest:'75 sec',sets:4,
 howto:'<strong>JOURNÉE BRAS (volume). Supersets.</strong><br>SS1 : Curl barre EZ/haltères (3-0-2-1) + Extension triceps overhead (3-0-2-0, long head étiré). 4 séries.<br>SS2 : Curl marteau/concentration (3×12) + Standing Calf (3×15-20, mollet 3/3 semaine).',cue:'Bras congestionné à bloc. Triceps overhead = volume long head.',
-weeks:Wk([[1,'SS1 4×(10-12+10-12) · SS2 3×(12+15-20)','CALIBRER'],[2,'+charge',''],[3,'+charge',''],[4,'+charge',''],[5,'+charge','PIC'],[6,'3×(12+12) · 3×(12+15)','Taper']]),
+weeks:Wk([[1,'SS1 4×(10-12+10-12) · SS2 3×(12+15-20)','CALIBRER'],[2,'+charge',''],[3,'+charge',''],[4,'+charge','Fin B1'],[5,'B2: SS1 preacher poulie LF + ext corde OH · SS2 curl poignées V + calf','RE-CALIBRER'],[6,'+charge',''],[7,'+charge',''],[8,'+charge','PIC'],[9,'3×(12+12) · 2×(12+15) léger','Taper']]),
 fatigue:{rx:'SS1 3× · SS2 2×',note:''}},
 {n:'GROS BLOC ABDOS (circuit 3 tours)',tag:'core',yt:Y('hanging leg raise cable crunch pallof'),tempo:'Contrôlé',rest:'45 sec',sets:0,
 howto:'<strong>Cœur abdos de la semaine (3 fonctions du six-pack). Circuit 3 tours.</strong><br><strong>Hanging Leg Raises:</strong> abdos bas + fléchisseurs (le plus dur à révéler). Pas de balancier.<br><strong>Cable Crunch (à genoux, poulie haute):</strong> grand droit haut AVEC CHARGE = épaisseur/densité (le six-pack est un muscle, il s\'épaissit avec résistance).<br><strong>Pallof Press / Woodchopper:</strong> obliques + anti-rotation = taille dessinée (pas élargie).',cue:'Le déficit révèle, le cable crunch chargé épaissit. Progression : charge crunch ↑, leg raises pliés→tendus→lestés.',
-weeks:Wk([[1,'Leg Raises 10-12 + Cable Crunch 12-15 + Pallof 10/c','CALIBRER'],[2,'+charge crunch','Leg raises tendus'],[3,'+charge',''],[4,'+charge',''],[5,'Leg raises lestées + crunch lourd + Pallof 12/c','PIC'],[6,'2 tours légers','Taper']]),
+weeks:Wk([[1,'Leg Raises 10-12 + Cable Crunch 12-15 + Pallof 10/c','CALIBRER'],[2,'+charge crunch','Leg raises tendus'],[3,'+charge',''],[4,'+charge','Fin B1'],[5,'Leg Raises tendus + Crunch lourd 10-12 + Woodchopper 10/c','B2 — chopper remplace Pallof'],[6,'+charge',''],[7,'Leg raises lestées + crunch lourd + Woodchop 12/c',''],[8,'Leg raises lestées + crunch max + Woodchop 12/c','PIC'],[9,'2 tours légers','Taper']]),
 fatigue:{rx:'2 tours légers',note:''}},
 {n:'WOD — FULL SEND (full body, dépense max)',tag:'wod',yt:Y('thruster devil press assault bike wod'),tempo:'',rest:'',sets:0,
 howto:'<strong>CIBLE : conditioning full body + dépense max + explosivité. Le jour où on IMPLIQUE les jambes (week-end course souple derrière).</strong><br>Thrusters (front squat + push press), Devil Press, Assault Bike. Tes mouvements préférés.<br>▶ <a href="'+Y('thruster crossfit')+'" target="_blank">Thruster</a> · <a href="'+Y('devil press')+'" target="_blank">Devil Press</a>',
 cue:'Tu as la caisse — vas-y dense. WOD différent chaque semaine. Note le chrono/score.',
-weeks:Wk([[1,'21-15-9 For Time: Thrusters@2×20 + Devil Press@2×15 + cal Assault Bike','Réf chrono'],[2,'AMRAP 15min: 10 Thrusters@2×17.5 + 8 Devil Press + 12cal Bike','Réf AMRAP'],[3,'21-15-9-9 For Time: Thrusters@2×22.5 + Devil Press@2×15 + cal Bike','Densif'],[4,'5 rounds For Time: 12 Thrusters + 10 Devil Press + 15cal Bike + 10 Box Jump','+volume'],[5,'21-18-15-12-9 For Time: Thrusters@2×20 + Devil Press@2×17.5 + cal Bike','PIC'],[6,'15-12-9 For Time: Thrusters@2×17.5 + Devil Press@2×12.5 + cal Bike','Taper']]),
+weeks:Wk([[1,'21-15-9 For Time: Thrusters@2×20 + Devil Press@2×15 + cal Assault Bike','B1 — réf chrono'],[2,'AMRAP 15min: 10 Thrusters@2×17.5 + 8 Devil Press + 12cal Bike','B1'],[3,'21-15-9-9 For Time: Thrusters@2×22.5 + Devil Press@2×15 + cal Bike','B1'],[4,'5 rounds For Time: 12 Thrusters + 10 Devil Press + 15cal Bike + 10 Box Jump','B1 — fin bloc'],[5,'AMRAP 16min: 8 Thrusters@2×20 + 8 KB Swing@28 + 10cal Ski + 8 Burpees','B2 — nouveau'],[6,'For Time 10→1: Thrusters@2×17.5 + DB Snatch@22.5 (10-9-8...1) + 10cal Bike toutes les 2 séries','B2 — descente'],[7,'EMOM 20min: min1 10 Thrusters / min2 12cal Bike / min3 8 Devil Press / min4 12 KB Swing@28 / min5 repos','B2 — volume'],[8,'21-18-15-12-9 For Time: Thrusters@2×20 + Devil Press@2×17.5 + cal Bike','B2 — PIC'],[9,'15-12-9 For Time: Thrusters@2×17.5 + Devil Press@2×12.5 + cal Bike','Taper']]),
 fatigue:{rx:'15-12-9 allégé',note:''}}]},
 
-{day:6,nm:'RUN — LONG ZONE 2',wu:'Z2',type:'run',dur:['55','60','65','70','75','50'],ex:[
+{day:6,nm:'RUN — LONG ZONE 2',wu:'Z2',type:'run',dur:['55','60','62','65','68','70','75','70','50'],ex:[
 {n:'Long Z2',tag:'cardio',yt:Y('zone 2 long run'),tempo:'',rest:'',sets:0,
 howto:'<strong>CIBLE : base aérobie + endurance + COMBUSTION (sèche) + récup active des jambes.</strong><br>Allure 5\'30-6\'00/km, FC 137-151 (ta Z2). Tu dois parler en phrases complètes.<br>Plus gros brûleur de calories de la semaine. Sert aussi de récup après le vendredi.',cue:'Travaille la CADENCE 170-172 (tu es à 167) sur les 20 premières min — métronome 170, foulée plus courte.',
-weeks:Wk([[1,'55min @FC 137-151','Base + cadence'],[2,'60min',''],[3,'65min',''],[4,'70min','Volume'],[5,'75min','PIC volume'],[6,'50min','Taper']]),
+weeks:Wk([[1,'55min @FC 137-151','Base + cadence'],[2,'60min',''],[3,'62min',''],[4,'65min',''],[5,'68min',''],[6,'70min',''],[7,'75min','PIC volume'],[8,'70min OU TEST 10km','Option test <40min'],[9,'50min','Taper']]),
 fatigue:{rx:'-15min',note:''}}]},
 
-{day:7,nm:'REPOS / NATATION LAC',wu:'',type:'rest',dur:['—','—','—','—','—','—'],ex:[
+{day:7,nm:'REPOS / NATATION LAC',wu:'',type:'rest',dur:['—','—','—','—','—','—','—','—','—'],ex:[
 {n:'Repos ou récup active',tag:'cardio',yt:'',tempo:'',rest:'',sets:0,
 howto:'<strong>REPOS = défaut.</strong> Récupération = le moment où le corps construit (et sèche).<br><strong>Option : natation lac eau libre</strong> (récup active, 0 impact, mobilité épaules, combustion douce). Crawl/brasse alterné par blocs. Focus expiration continue sous l\'eau. Bouée de sécurité.',cue:'Si tu nages : ça reste léger, c\'est de la récup, pas une séance.',
-weeks:Wk([[1,'Repos OU nat 30-40min','—'],[2,'Repos OU nat',''],[3,'Repos OU nat',''],[4,'Repos OU nat',''],[5,'Repos (PIC = priorité récup)',''],[6,'Repos','Taper']]),
+weeks:Wk([[1,'Repos OU nat 30-40min','—'],[2,'Repos OU nat',''],[3,'Repos OU nat',''],[4,'Repos OU nat',''],[5,'Repos OU nat',''],[6,'Repos OU nat',''],[7,'Repos (volume élevé = récup)',''],[8,'Repos (PIC = priorité récup)',''],[9,'Repos','Taper — plage dans 1 sem']]),
 fatigue:{rx:'Repos total',note:''}}]}
 ];
 
@@ -313,7 +320,7 @@ var GOALS=[
 {cat:'COMPOSITION (objectif plage)',it:[{t:'Poids',c:'72-73 kg'},{t:'Body fat',c:'9-11%'},{t:'Abdos',c:'Visibles + denses'},{t:'Taille',c:'-3 à -5 cm tour de taille'}]},
 {cat:'HAUT DU CORPS',it:[{t:'Largeur épaules',c:'Effet V marqué'},{t:'Volume bras',c:'Maintien/léger gain'},{t:'Tractions endurance',c:'>30 strict enchaînées'},{t:'Tractions lestées',c:'Maintien +35kg'}]},
 {cat:'COURSE',it:[{t:'10 km',c:'<40 min',s:'Stretch <39min'},{t:'Allure seuil',c:'Tenir 30min @4:15'},{t:'Cadence',c:'170-172 spm'},{t:'Z2 @145bpm',c:'<5:35/km'}]},
-{cat:'EXPLOSIVITÉ (maintien)',it:[{t:'Broad Jump',c:'>2.90m',s:'Stretch >2.95m'},{t:'Box/Depth Jump',c:'Maintien hauteur'},{t:'Asymétrie sauts',c:'<10%'}]},
+{cat:'EXPLOSIVITÉ (maintien)',it:[{t:'Broad Jump (tests S5+S8)',c:'>2.90m',s:'Stretch >2.95m'},{t:'Box/Depth Jump',c:'Maintien hauteur'},{t:'Asymétrie sauts',c:'<10%'}]},
 {cat:'GRIP',it:[{t:'Barre strongman',c:'Tenue max ↑'},{t:'Dead hang',c:'Maintien/↑'},{t:'Pinch',c:'Qualité neuve établie'}]},
 {cat:'JAMBES (maintien)',it:[{t:'Masse',c:'Maintien (dev = automne)'},{t:'Asymétries',c:'Réduites (unilatéral)'},{t:'Mollets',c:'Densité sèche'}]}
 ];
@@ -325,18 +332,18 @@ else if(S.p==='weeks'){tt.textContent='SEMAINES';a.innerHTML=rWk()}
 else if(S.p==='days'){tt.textContent='SEMAINE '+S.w;ph.textContent=PH[S.w];a.innerHTML=rDs()}
 else if(S.p==='day'){tt.textContent='S'+S.w+' · '+DN[S.d];ph.textContent=PH[S.w];a.innerHTML=rD()}}
 
-function rI(){return '<div class="fi"><div class="ih"><h1>SHARP</h1><div class="su">6 semaines · affûtage</div><div class="tg">RECOMP HAUT DU CORPS · SÈCHE · 10KM</div></div>'+
+function rI(){return '<div class="fi"><div class="ih"><h1>SHARP</h1><div class="su">9 semaines · 2 blocs · affûtage</div><div class="tg">15 JUIN → 13 AOÛT · PLAGE LE 14</div></div>'+
 '<div class="is"><h3>◆ OBJECTIF</h3><p>Définition maximale pour la plage. <b>Recomposition haut du corps</b> (pecs, épaules, dos, bras) + <b>sèche</b>. Jambes en maintien, course comme outil de combustion + perf 10km. Explosivité et grip maintenus (suite du Bridge).</p></div>'+
 '<div class="is"><h3>◆ STRUCTURE</h3><ul><li><b>Lun</b> — Push + explo haut + abdos + WOD</li><li><b>Mar</b> — Run Tempo/Seuil</li><li><b>Mer</b> — Pull + grip dédié + WOD endurance tractions</li><li><b>Jeu</b> — Run Intervalles VMA</li><li><b>Ven</b> — Full : explo bas + jambes + bras + gros abdos + WOD</li><li><b>Sam</b> — Run Long Z2</li><li><b>Dim</b> — Repos / nat lac</li></ul></div>'+
 '<div class="is"><h3>◆ FOCUS</h3><div class="ag"><div class="ai2">PECS</div><div class="ai2">ÉPAULES</div><div class="ai2">DOS</div><div class="ai2">BRAS</div><div class="ai2">ABDOS</div><div class="ai2">EXPLO</div><div class="ai2">GRIP</div><div class="ai2">10KM</div><div class="ai2">UNILAT.</div></div></div>'+
-'<div class="is"><h3>◆ PROGRESSION</h3><p><b>S1-2</b> Installation (calibration charges + scores)<br><b>S3-4</b> Densification<br><b>S5</b> PIC<br><b>S6</b> Taper — arriver sec ET frais</p></div>'+
-'<div class="is"><h3>◆ RÈGLES</h3><p>WOD <b>différent chaque semaine</b>, cible fixe par jour. Jambes en <b>maintien</b> (dev = automne). En sèche : qualité > quantité, surveille récup + peau (grip).</p></div>'+
+'<div class="is"><h3>◆ PROGRESSION</h3><p><b>BLOC 1 (S1-S4)</b> : exos de base — haltères, Panatta Rows, pec deck, pendulum. Install → mini-pic.<br><b>BLOC 2 (S5-S8)</b> : NOUVELLES machines — Wide Chest uni, T-Bar Watson, fly incliné disques, Laroq convergents, hack squat, preacher Laroq. Re-calibration S5 puis montée → PIC S8.<br><b>S9</b> : Taper -40% — tu pars à la plage sec ET frais.<br><br>Moteurs inchangés sur les 2 blocs : tractions, squat 3×3, hip thrust, pullover Technogym, runs en progression continue</p></div>'+
+'<div class="is"><h3>◆ RÈGLES</h3><p>WOD <b>différent chaque semaine</b> (27 au total), cible fixe par jour. Jambes en <b>maintien</b> (dev = automne). Déficit doux -300 kcal sur 9 sem. S5 = re-calibre les charges sur les nouvelles machines sans forcer. Surveille récup + peau (grip).</p></div>'+
 '<button class="sb" onclick="nav(\'weeks\')">PROGRAMME →</button>'+
 '<button class="sb alt" onclick="nav(\'goals\')">OBJECTIFS →</button></div>'}
 
 function rG(){var h='<div class="fi">';GOALS.forEach(function(g){h+='<div class="stt">'+g.cat+'</div><table class="otb"><tr><th>CIBLE</th><th>VALEUR</th></tr>';g.it.forEach(function(i){h+='<tr><td>'+i.t+'</td><td><b>'+i.c+'</b>'+(i.s?'<br><span style="color:var(--w);font-size:10px">'+i.s+'</span>':'')+'</td></tr>'});h+='</table>'});h+='<button class="sb" style="margin-top:16px" onclick="nav(\'weeks\')">PROGRAMME →</button></div>';return h}
 
-function rWk(){var h='<div class="fi"><div class="stt">6 SEMAINES</div><div class="wg">';for(var w=1;w<=6;w++){var c=w===5?'pk':w===6?'tp':'';h+='<div class="wc '+c+'" onclick="nav(\'days\',{w:'+w+'})"><div class="wn">S'+w+'</div><div class="wl">'+PH[w]+'</div></div>'}return h+'</div></div>'}
+function rWk(){var h='<div class="fi"><div class="stt">BLOC 1 (S1-S4) · BLOC 2 (S5-S8) · TAPER (S9)</div><div class="wg">';for(var w=1;w<=9;w++){var c=w===8?'pk':w===9?'tp':'';h+='<div class="wc '+c+'" onclick="nav(\'days\',{w:'+w+'})"><div class="wn">S'+w+'</div><div class="wl">'+PH[w]+'</div></div>'}return h+'</div></div>'}
 
 function rDs(){var h='<div class="fi">';if(BF[S.w])h+='<div class="br"><h3>◆ BRIEFING S'+S.w+'</h3><p>'+BF[S.w]+'</p></div>';h+='<div class="stt">SÉANCES</div><div class="dg">';for(var d=1;d<=7;d++){var D=DAYS.find(function(x){return x.day===d}),dn=gDn(S.w,d),du=D&&D.dur[S.w-1]!=='—'?D.dur[S.w-1]+'min':'';var cls=D.type==='run'?'run':D.type==='rest'?'rest':'';h+='<div class="dc '+cls+'" onclick="nav(\'day\',{w:'+S.w+',d:'+d+'})"><div class="dn">'+DN[d]+'</div><div class="dd">'+du+'</div>'+(dn?'<div class="dk">✓</div>':'')+'</div>'}return h+'</div></div>'}
 
@@ -376,7 +383,7 @@ h+='<button class="cb exp" onclick="exportSession('+w+','+S.d+')">↗ EXPORTER P
 return h+'</div>'}
 
 function exportSession(w,d){var D=DAYS.find(function(x){return x.day===d});if(!D)return;var dt=new Date();var dateStr=dt.toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
-var r='━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n◆ RAPPORT — SHARP\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n'+dateStr+'\nSemaine '+w+'/6 · '+DN[d]+' · '+D.nm+'\nPhase : '+PH[w]+'\n\n──── EXERCICES ────\n\n';
+var r='━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n◆ RAPPORT — SHARP\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n'+dateStr+'\nSemaine '+w+'/9 · '+DN[d]+' · '+D.nm+'\nPhase : '+PH[w]+'\n\n──── EXERCICES ────\n\n';
 var totalS=0,doneS=0;
 D.ex.forEach(function(ex,ei){var wk=ex.weeks[w];if(!wk||wk.rx==='—')return;
 r+='▸ '+ex.n+(ex.tag==='pillar'?' ⭐':'')+'\n';
